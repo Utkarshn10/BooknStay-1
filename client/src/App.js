@@ -17,6 +17,18 @@ import Confirm from "./components/booking/Confirm";
 import Auth from "./components/auth/Auth";
 import Existing from "./components/booking/Existing";
 import NoPage from "./components/pages/NoPage";
+import MainHomepage from "./components/pages/MainHomepage/MainHomepage";
+
+
+import LandingPage from './components/pages/auth/LandingPage'
+import LoginPage from './components/pages/auth/LoginPage'
+import LoginPageAdmin from './components/pages/auth/LoginPageAdmin'
+import ForgetPasswordPage from './components/pages/auth/ForgetPasswordPage'
+import RegisterPage from './components/pages/auth/RegisterPage'
+import RegisterPageAdmin from './components/pages/auth/RegisterPageAdmin'
+import HotelDetails from "./components/Admin/HotelDetails/HotelDetails";
+
+
 const App = () => {
   const location = useLocation();
   /* const history = useHistory(); */
@@ -25,10 +37,10 @@ const App = () => {
   }, [location]);
   return (
     <>
-      <Navbar />
-      <NavMobile />
+      {/* <Navbar /> */}
+      {/* <NavMobile /> */}
       <Switch>
-        <Route path="/" exact component={Home} />
+        {/* <Route path="/" exact component={Home} /> */}
         <Route path="/rooms" exact component={Rooms} />
         <Route
           path="/rooms/:id"
@@ -43,8 +55,20 @@ const App = () => {
         <Route path="/booking/checkout" exact component={Checkout} />
         <Route path="/booking/confirm" exact component={Confirm} />
         <Route path="/booking/existing" exact component={Existing} />
-        <Route path="/admin" exact component={Auth} />
-        <Route path="*" exact component={NoPage} />
+        {/* <Route path="/admin" exact component={Auth} /> */}
+        {/* <Route path="*" exact component={NoPage} /> */}
+        
+        
+        
+        <Route exact path="/" component={ LandingPage } />
+        <Route path="/Customer" component={ LoginPage } />
+        <Route path="/Admin" component={ LoginPageAdmin } />
+        <Route path="/forget-password" component={ ForgetPasswordPage } />
+        <Route path="/register" component={ RegisterPage } />
+        <Route path="/AdminRegister" component={RegisterPageAdmin}/>
+        <Route path="/home" component={ MainHomepage } />
+        <Route path="/addHotel" component={HotelDetails}/>
+
       </Switch>
       <Footer />
     </>
