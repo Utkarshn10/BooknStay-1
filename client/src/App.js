@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import "./styles/App.scss";
 import { Route, Switch, useLocation } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
@@ -27,11 +27,13 @@ import ForgetPasswordPage from './components/pages/auth/ForgetPasswordPage'
 import RegisterPage from './components/pages/auth/RegisterPage'
 import RegisterPageAdmin from './components/pages/auth/RegisterPageAdmin'
 import HotelDetails from "./components/Admin/HotelDetails/HotelDetails";
+import { Context } from "./context/Context";
 
 
 const App = () => {
+  const {user}= useContext(Context)
   const location = useLocation();
-  /* const history = useHistory(); */
+  /* const history = useHistory(); */ 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
@@ -43,10 +45,7 @@ const App = () => {
         {/* <Route path="/" exact component={Home} /> */}
         <Route path="/rooms" exact component={Rooms} />
         <Route
-          path="/rooms/:id"
-          exact
-          render={(props) => <Room {...props} />}
-        />
+          path="/rooms/:id" exact render={(props) => <Room {...props} />} />
         <Route path="/dining" exact component={Dining} />
         <Route path="/about" exact component={About} />
         <Route path="/tours" exact component={Tour} />
@@ -60,13 +59,17 @@ const App = () => {
         
         
         
-        <Route exact path="/" component={ LandingPage } />
-        <Route path="/Customer" component={ LoginPage } />
-        <Route path="/Admin" component={ LoginPageAdmin } />
+        <Route exact path="/">{user ? <MainHomepage></MainHomepage>:<LandingPage></LandingPage> }</Route>
+        
+        <Route path="/Customer">{user ? <MainHomepage></MainHomepage>:<LoginPage></LoginPage>}</Route>
+        <Route path="/register">{user ? <MainHomepage></MainHomepage>:<RegisterPage></RegisterPage>}</Route>
+        
+        <Route path="/Admin">{user ? <MainHomepage></MainHomepage>:<LoginPageAdmin></LoginPageAdmin>}</Route>
+        <Route path="/AdminRegister">{user ? <MainHomepage></MainHomepage>:<RegisterPageAdmin></RegisterPageAdmin>}</Route>
+
         <Route path="/forget-password" component={ ForgetPasswordPage } />
-        <Route path="/register" component={ RegisterPage } />
-        <Route path="/AdminRegister" component={RegisterPageAdmin}/>
-        <Route path="/home" component={ MainHomepage } />
+
+        <Route path="/home"><MainHomepage></MainHomepage></Route>
         <Route path="/addHotel" component={HotelDetails}/>
 
       </Switch>
