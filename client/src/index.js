@@ -7,6 +7,10 @@ import thunk from "redux-thunk";
 import App from "./App";
 import {ChakraProvider} from "@chakra-ui/react";
 import "./styles/index.scss";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
+
 
 import reducers from "./reducers";
 

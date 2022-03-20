@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import BookWidget from "../booking/BookWidget";
 import "../../styles/Home.scss";
+
 const Home = () => {
   return (
     <div className="Home">

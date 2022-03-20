@@ -20,15 +20,32 @@ app.use(express.json({ limit: "30mb" }));
 
 app.use(cors());
 
+// 0
 app.use("/rooms", roomRoutes);
+
+// 1
 app.use("/bookings", bookingRoutes);
+
+
+// 1
 app.use("/auth", authRoutes);
+
+//1
 app.get("/", (req, res) => {
   res.send("Hello to Suay Resort API");
 });
+
+
+//1
 app.use("/user", userRoutes);
+
+//1
 app.use("/admin", adminRoutes);
+
+//1
 app.use("/hotel", hotelDetailsRouter)
+
+//1
 app.use("/room", roomDetailsRouter)
 
 const PORT = process.env.PORT || 5000;
