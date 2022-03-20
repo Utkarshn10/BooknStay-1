@@ -6,6 +6,21 @@ const  HotelDetails = (props) => {
     const [input, setInput] = useState('');
     const [files, setFiles] = useState([]);
 
+
+    const [hotelname, setHotelname] = useState()
+    const [hotelrating, setHotelrating] = useState()
+    const [locality, setLocality] = useState()
+    const [state, setState] = useState()
+    const [country, setCountry] = useState()
+    const [pincode, setPincode] = useState()
+    const [amenties, setAmenties] = useState([])
+    const [checkin, setCheckin] = useState()
+    const [checkout, setCheckout] = useState()
+
+
+    const handleSubmit = () =>{
+      console.log(hotelname, hotelrating, locality, state, country, pincode, checkin, checkout)
+    }
    
     const handleInputChange = (e) => setInput(e.target.value)
 
@@ -24,12 +39,6 @@ const  HotelDetails = (props) => {
         try {
             console.log("uploaded")
             console.log(files);
-        //   const res = await axios.post('/api/upload', formData, {
-        //     headers: {
-        //       'Content-Type': 'multipart/form-data'
-        //     },
-        //   });
-        //   console.log(res);
         } catch (err) {
           if (err.response.status === 500) {
             console.log(err);
@@ -55,6 +64,7 @@ const  HotelDetails = (props) => {
                     <Input
                     type="text"
                     placeholder="Enter Hotel Name"
+                    onChange={(e)=>{setHotelname(e.target.value)}}
                     />
                 </FormControl>
                 </GridItem>
@@ -64,6 +74,7 @@ const  HotelDetails = (props) => {
                     <Input
                     type="text"
                     placeholder="Enter Hotel Rating"
+                    onChange={(e)=>{setHotelrating(e.target.value)}}
                     />
                 </FormControl>
                 </GridItem>
@@ -74,7 +85,7 @@ const  HotelDetails = (props) => {
                     <Input
                     type="text"
                     placeholder="Enter Hotel Locality"
-                    style={{border:"2px solid black"}}
+                    onChange={(e)=>{setLocality(e.target.value)}}
                     />
                 </FormControl>
                 </GridItem>
@@ -85,6 +96,7 @@ const  HotelDetails = (props) => {
                     <Input
                     type="text"
                     placeholder="Enter State"
+                    onChange={(e)=>{setState(e.target.value)}}
                     />
                 </FormControl>
                 </GridItem>
@@ -95,6 +107,7 @@ const  HotelDetails = (props) => {
                     <Input
                     type="text"
                     placeholder="Enter Country"
+                    onChange={(e)=>{setCountry(e.target.value)}}
                     />
                 </FormControl>
                 </GridItem>
@@ -105,6 +118,7 @@ const  HotelDetails = (props) => {
                     <Input
                     type="text"
                     placeholder="Enter Pincode"
+                    onChange={(e)=>{setPincode(e.target.value)}}
                     />
                 </FormControl>
                 </GridItem>
@@ -119,8 +133,8 @@ const  HotelDetails = (props) => {
                 <FormControl as='fieldset'>
                     <RadioGroup defaultValue='Itachi'>
                         <HStack spacing='24px'>
-                        <Radio value='ac'>AC</Radio>
-                        <Radio value='pool'>Pool</Radio>
+                          <Radio value='ac'>AC</Radio>
+                          <Radio value='pool'>Pool</Radio>
                         </HStack>
                     </RadioGroup>
                     </FormControl>
@@ -131,6 +145,8 @@ const  HotelDetails = (props) => {
                     <Input
                     type="text"
                     placeholder=""
+                    onChange={(e)=>{setCheckin(e.target.value)}}
+                    
                     />
                 </FormControl>
                 </GridItem>
@@ -141,6 +157,7 @@ const  HotelDetails = (props) => {
                     <Input
                     type="text"
                     placeholder=""
+                    onChange={(e)=>{setCheckout(e.target.value)}}
                     />
                 </FormControl>
                 </GridItem>
@@ -174,12 +191,12 @@ const  HotelDetails = (props) => {
            _hover={{ bg: "cyan.200" }}
            variant="ghost"
            type="submit"
+           onClick={handleSubmit}
          >
            Submit
          </Button>
         </VStack>
-
-)
+  )
  }
 
  export default HotelDetails;

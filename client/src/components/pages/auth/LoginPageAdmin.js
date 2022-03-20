@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { Context } from '../../../context/Context'
 
 
 
@@ -8,25 +9,24 @@ export default function LoginPageAdmin() {
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
     const [admin, setAdmin] = useState()
+    const {user, dispatch, isFetching} = useContext(Context)
+
+
     const handleRegister = async(e) =>{
         e.preventDefault()
+        dispatch({type: "LOGIN_START"})
         try{
             const res = await axios.post("http://localhost:5000/admin/adminsignin", {
 
                 email:email,
                 password:password,
             })
-
-            setAdmin(res.data)
-            console.log(res.data)
+            dispatch({type: "LOGIN_SUCCESS", payload: res.data})
 
         }catch(err){
-            console.log(err)
-
+            dispatch({type: "LOGIN_FAILURE"})
         }
-
-        
-
+        console.log(user)
     }
     return (
    

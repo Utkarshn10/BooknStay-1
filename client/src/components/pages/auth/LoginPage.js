@@ -1,6 +1,8 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import { fromUnixTime } from 'date-fns'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Context } from '../../../context/Context'
 
 
 
@@ -8,23 +10,24 @@ export default function SignInPage() {
 
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
-    const [user, setUser] = useState()
+    const {user, dispatch, isFetching} = useContext(Context)
 
 
     const handleLogin = async(e) => {
         e.preventDefault()
+        dispatch({type: "LOGIN_START"})
         try{
-          
             const res = await axios.post("http://localhost:5000/user/signin", {
                 email:email,
                 password:password
             })
-            setUser(res.data)
-            console.log(res.data)
+            dispatch({type: "LOGIN_SUCCESS", payload: res.data})
         }catch(err){
-
+            dispatch({type: "LOGIN_FAILURE"})
         }
     }
+
+    console.log(user)
 
     return (
         <div className="text-center m-5-auto">
@@ -42,6 +45,7 @@ export default function SignInPage() {
                 </p>
                 <p>
                     <button id="sub_btn" type="submit">Login</button>
+
                 </p>
             </form>
             <footer>

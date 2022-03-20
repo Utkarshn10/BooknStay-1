@@ -54,11 +54,11 @@ const HotelDetailsSchema = new mongoose.Schema({
         type:String,
     },
 
-    chech_in:{
+    check_in:{
         type:String
     },
 
-    chech_in:{
+    check_out:{
         type:String
     }
 

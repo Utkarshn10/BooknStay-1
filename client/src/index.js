@@ -13,17 +13,20 @@ import 'mdbreact/dist/css/mdb.css';
 
 
 import reducers from "./reducers";
+import { ContextProvider } from "./context/Context";
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 
 ReactDOM.render(
   // Provider connects the store (global states) to the entire App
   <Provider store={store}>
-    <ChakraProvider>
-      <Router>
-        <App />
-      </Router>
-    </ChakraProvider>
+    <ContextProvider>
+      <ChakraProvider>
+        <Router>
+          <App />
+        </Router>
+      </ChakraProvider>
+    </ContextProvider>
   </Provider>,
   document.getElementById("root")
 );
