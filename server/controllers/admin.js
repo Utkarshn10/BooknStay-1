@@ -30,7 +30,6 @@ export const adminSignin = async (req, res) => {
 };
 
 export const adminSignup = async (req, res) => {
-  console.log("Called")
   const {email, password, firstName, lastName, phone} = req.body;
 
   try {
