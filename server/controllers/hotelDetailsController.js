@@ -56,8 +56,10 @@ export const deleteHotel = async (req,res) =>{
 //GET HOTEL DETAILS BY ID
 export const getHotel = async (req, res) =>{
     try{
+        console.log(req.params.hotelId)
         hotel = await hotelDetailsModel.findById(req.params.hotelId)
         res.status(200).json(hotel)
+        console.log(hotel)
     }catch(err){
         res.status(400).json(err)
     }
