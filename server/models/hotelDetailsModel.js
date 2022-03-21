@@ -12,6 +12,10 @@ const HotelDetailsSchema = new mongoose.Schema({
         required: true,
         unique:true
     },
+    hotel_desc :{
+        type: String,
+        unique:true
+    },
 
     hotel_rating :{
         type: Number,

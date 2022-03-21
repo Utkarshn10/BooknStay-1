@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import {
   Box,
   Image,
@@ -18,29 +18,34 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import MultiImageInput from "react-multiple-image-input";
+import {Context} from "../../../context/Context"
 
 const HotelDetails = (props) => {
-  const url = "http://localhost:5000/hotel/addHotel";
+
+  const {user} = useContext(Context)
+  // const url = "";
   const [input, setInput] = useState("");
   const [files, setFiles] = useState([]);
 
   const [data, setData] = useState({
     hotelname: "",
-    hotelrating: "",
+    hotelrating: 0,
     locality: "",
     state: "",
     country: "",
-    pincode: "",
+    pincode: 0,
     amenties: "",
     checkin: "",
     checkout: "",
+    price:0,
+    userRating:0,
     // images will be added later
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    axios
-      .post(url, {
+    const hotelData = {
+      admin_id: user.result._id,
         hotel_name: data.hotelname,
         hotel_rating: data.hotelrating,
         check_in: data.checkin,
@@ -51,18 +56,19 @@ const HotelDetails = (props) => {
           country: data.country,
           pincode: data.pincode,
         },
-      })
-      .then((res) => {
-        console.log(res.data);
-      });
+        price: data.price,
+        userRating:data.userRating
+    }
+    console.log(hotelData)
+
+    const res = await axios.post ("http://localhost:5000/hotel/addHotel", hotelData)
+    console.log("anna")
   };
 
   const handle = (e) => {
-    console.log(e.target.value);
     const newdata = {...data};
     newdata[e.target.id] = e.target.value;
     setData(newdata);
-    console.log(newdata);
   };
 
   const onSubmit = async (e) => {
@@ -105,11 +111,11 @@ const HotelDetails = (props) => {
           <GridItem colSpan={1}>
             <FormControl>
               <FormLabel>Hotel Rating</FormLabel>
-              <Input
+              <input
                 onChange={(e) => handle(e)}
                 id="hotelrating"
                 value={data.hotelrating}
-                type="text"
+                type="number"
                 placeholder="Enter Hotel Rating"
               />
             </FormControl>
@@ -208,6 +214,10 @@ const HotelDetails = (props) => {
               />
             </FormControl>
           </GridItem>
+          <input  
+            type="number" id="userRating" onChange={(e) => handle(e)}  value={data.userRating}  placeholder="user rating"/>
+          <Input id="price" onChange={(e) => handle(e)}  value={data.price} type="number" placeholder="price" />
+
         </SimpleGrid>
         <VStack column={2} columnGap={3} rowGap={6} w="full">
           <Heading margin="20px"> Upload Image</Heading>
