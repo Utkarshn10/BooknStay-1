@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import Rating from '../../Rating'
 import ReactStars from 'react-rating-stars-component'
-
+import { Link } from 'react-router-dom'
 
 export default function HotelCard(props) {
   return (
@@ -31,6 +31,7 @@ export default function HotelCard(props) {
 
         <Card.Body>
           <Card.Link href="#"> {props.user_rating}  </Card.Link>
+          {/* <Link to={`/hotel/${props._id}`}></Link> */}
           <Card.Link href="#">Read More..</Card.Link>
         </Card.Body>
       </Card>
