@@ -52,13 +52,9 @@ export const deleteRoom = async (req,res) =>{
     }
 }
 
-//Not Working
-//GET ROOM DETAILS BY ID
-export const getRoom = async (req, res) =>{
-    try{
-        room = await roomDetailsModel.findById(req.params.roomId)
-        res.status(200).json(room)
-    }catch(err){
-        res.status(400).json(err)
-    }
+
+// GET ALL ROOMS BY HOTEL ID
+export const getAllRoom = async (req, res) => {
+    const hotels = await roomDetailsModel.find({hotel_id: req.params.hotelId})
+    res.status(200).json(hotels)
 }
