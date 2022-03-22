@@ -1,5 +1,6 @@
 import HeroSection from "./HeroSection";
 import HotelCard from "./HotelCard";
+
 import React, { useContext } from 'react'
 import { Context } from '../../../context/Context'
 
