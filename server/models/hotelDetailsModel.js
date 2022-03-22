@@ -12,6 +12,10 @@ const HotelDetailsSchema = new mongoose.Schema({
         required: true,
         unique:true
     },
+    hotel_desc :{
+        type: String,
+        unique:true
+    },
 
     hotel_rating :{
         type: Number,
@@ -22,7 +26,10 @@ const HotelDetailsSchema = new mongoose.Schema({
     hotel_start_date:{
         type: Date,
     },
-
+    price:{
+        type:Number,
+        required: true
+    },
     address:{
         locality:{
             type:String,
@@ -45,7 +52,6 @@ const HotelDetailsSchema = new mongoose.Schema({
             required:true
         }
     },
-
     amenties:{
         type:Array,
     },
@@ -60,6 +66,10 @@ const HotelDetailsSchema = new mongoose.Schema({
 
     check_out:{
         type:String
+    },
+    userRating:{
+        type:Number,
+        required:true
     }
 
     

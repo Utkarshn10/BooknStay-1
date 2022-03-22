@@ -52,15 +52,14 @@ export const deleteHotel = async (req,res) =>{
     }
 }
 
-//Not Working
-//GET HOTEL DETAILS BY ID
-export const getHotel = async (req, res) =>{
-    try{
-        console.log(req.params.hotelId)
-        hotel = await hotelDetailsModel.findById(req.params.hotelId)
-        res.status(200).json(hotel)
-        console.log(hotel)
-    }catch(err){
-        res.status(400).json(err)
-    }
+//GET HOTEL BY ID
+export const getHotel = async (req,res) =>{
+    const hotel = await hotelDetailsModel.findById(req.params.hotelid)
+    res.status(200).json(hotel)
+}
+
+//GET ALL HOTELS
+export const getAllHotel = async (req, res) => {
+    const hotels = await hotelDetailsModel.find()
+    res.status(200).json(hotels)
 }
