@@ -30,6 +30,7 @@ import RegisterPage from './components/pages/auth/RegisterPage'
 import RegisterPageAdmin from './components/pages/auth/RegisterPageAdmin'
 import HotelDetails from "./components/Admin/HotelDetails/HotelDetails";
 import { Context } from "./context/Context";
+import NewHotelDetails from "./components/Admin/HotelDetails/NewHotelDetails";
 
 
 const App = () => {
@@ -82,7 +83,7 @@ const App = () => {
         <Route path="/checkbox" component={Checkbox}/>
 
         <Route path="/home"><MainHomepage></MainHomepage></Route>
-        <Route path="/addHotel" component={HotelDetails}/>
+        <Route path="/addHotel" component={NewHotelDetails}/>
 
       </Switch>
       <Footer />

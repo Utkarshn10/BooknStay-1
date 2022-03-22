@@ -45,154 +45,250 @@ export const Checkbox = () => {
     
   return (
     <>
-      <div className="container-fluid top ">
-        <div className="container mt-5  pb-5 pt-5">
-          <h3 className="form-head-contact-h3 ">
-            Your programming expertise lies in what languages?{" "}
+      <div className="">
+        <div className="">
+          <h3 className="">
+            Choose all the facilities your hotel offer !
           </h3>
   
           <form>
-            <div className="row">
-              <div className="col-md-6">
-                <div className="form-check m-3">
+            <div className="">
+              <div className="">
+                <div className="">
                   <input
-                    className="form-check-input"
+                    className=""
                     type="checkbox"
                     name="languages"
-                    value="Javascript"
+                    value="Elevator"
                     id="flexCheckDefault"
                     onChange={handleChange}
                   />
                   <label
-                    className="form-check-label"
+                    className=""
                     htmlFor="flexCheckDefault"
                   >
-                      Javascript
+                      Elevator
                   </label>
                 </div>
-                <div className="form-check m-3">
+                <div className="">
                   <input
-                    className="form-check-input"
+                    className=""
                     type="checkbox"
                     name="languages"
-                    value="Python"
+                    value="DryCleaning"
                     id="flexCheckDefault"
                     onChange={handleChange}
                   />
                   <label
-                    className="form-check-label"
+                    className=""
                     htmlFor="flexCheckDefault"
                   >
-                      Python
+                      DryCleaning
                   </label>
                 </div>
-                <div className="form-check m-3">
+                <div className="">
                   <input
-                    className="form-check-input"
+                    className=""
                     type="checkbox"
                     name="languages"
-                    value="Java"
+                    value="Housekeeping"
                     id="flexCheckDefault"
                     onChange={handleChange}
                   />
                   <label
-                    className="form-check-label"
+                    className=""
                     htmlFor="flexCheckDefault"
                   >
-                      Java
+                      Housekeeping
                   </label>
                 </div>
-                <div className="form-check m-3">
+                <div className="">
                   <input
-                    className="form-check-input"
+                    className=""
                     type="checkbox"
                     name="languages"
-                    value="PHP"
+                    value="Parking"
                     id="flexCheckDefault"
                     onChange={handleChange}
                   />
                   <label
-                    className="form-check-label"
+                    className=""
                     htmlFor="flexCheckDefault"
                   >
-                      PHP
+                      Parking
                   </label>
                 </div>
               </div>
-              <div className="col-md-6">
-                <div className="form-check m-3">
+              <div className="">
+                <div className="">
                   <input
-                    className="form-check-input"
+                    className=""
                     type="checkbox"
                     name="languages"
-                    value="C#"
+                    value="SmokingRoom"
                     id="flexCheckDefault"
                     onChange={handleChange}
                   />
                   <label
-                    className="form-check-label"
+                    className=""
                     htmlFor="flexCheckDefault"
                   >
-                      C#
+                      SmokingRoom
                   </label>
                 </div>
-                <div className="form-check m-3">
+                <div className="">
                   <input
-                    className="form-check-input"
+                    className=""
                     type="checkbox"
                     name="languages"
-                    value="C++"
+                    value="Indoor Sports"
                     id="flexCheckDefault"
                     onChange={handleChange}
                   />
                   <label
-                    className="form-check-label"
+                    className=""
                     htmlFor="flexCheckDefault"
                   >
-                      C++
+                      Indoor Sports
                   </label>
                 </div>
-                <div className="form-check m-3">
+                <div className="">
                   <input
-                    className="form-check-input"
+                    className=""
                     type="checkbox"
                     name="languages"
-                    value="C"
+                    value="Lounge"
                     id="flexCheckDefault"
                     onChange={handleChange}
                   />
                   <label
-                    className="form-check-label"
+                    className=""
                     htmlFor="flexCheckDefault"
                   >
-                      C
+                      Lounge
                   </label>
                 </div>
-                <div className="form-check m-3">
+                <div className="">
                   <input
-                    className="form-check-input"
+                    className=""
                     type="checkbox"
                     name="languages"
-                    value="Typescript"
+                    value="Bar"
                     id="flexCheckDefault"
                     onChange={handleChange}
                   />
                   <label
-                    className="form-check-label"
+                    className=""
                     htmlFor="flexCheckDefault"
                   >
-                      Typescript
+                      Bar
+                  </label>
+                </div>
+                <div className="">
+                  <input
+                    className=""
+                    type="checkbox"
+                    name="languages"
+                    value="Cafe"
+                    id="flexCheckDefault"
+                    onChange={handleChange}
+                  />
+                  <label
+                    className=""
+                    htmlFor="flexCheckDefault"
+                  >
+                      Cafe
+                  </label>
+                </div>
+                <div className="">
+                  <input
+                    className=""
+                    type="checkbox"
+                    name="languages"
+                    value="Gym"
+                    id="flexCheckDefault"
+                    onChange={handleChange}
+                  />
+                  <label
+                    className=""
+                    htmlFor="flexCheckDefault"
+                  >
+                      Gym
+                  </label>
+                </div>
+                <div className="">
+                  <input
+                    className=""
+                    type="checkbox"
+                    name="languages"
+                    value="Spa and Salon"
+                    id="flexCheckDefault"
+                    onChange={handleChange}
+                  />
+                  <label
+                    className=""
+                    htmlFor="flexCheckDefault"
+                  >
+                      Spa and Salon
+                  </label>
+                </div>
+                <div className="">
+                  <input
+                    className=""
+                    type="checkbox"
+                    name="languages"
+                    value="CCTV"
+                    id="flexCheckDefault"
+                    onChange={handleChange}
+                  />
+                  <label
+                    className=""
+                    htmlFor="flexCheckDefault"
+                  >
+                      CCTV
+                  </label>
+                </div>
+                <div className="">
+                  <input
+                    className=""
+                    type="checkbox"
+                    name="languages"
+                    value="HomeTheatre"
+                    id="flexCheckDefault"
+                    onChange={handleChange}
+                  />
+                  <label
+                    className=""
+                    htmlFor="flexCheckDefault"
+                  >
+                      HomeTheatre
+                  </label>
+                </div>
+                <div className="">
+                  <input
+                    className=""
+                    type="checkbox"
+                    name="languages"
+                    value="KidsClub"
+                    id="flexCheckDefault"
+                    onChange={handleChange}
+                  />
+                  <label
+                    className=""
+                    htmlFor="flexCheckDefault"
+                  >
+                      KidsClub
                   </label>
                 </div>
               </div>
             </div>
   
-            <div className="form-floating mt-3 mb-3 text-center">
+            <div className="">
               <label htmlFor="exampleFormControlTextarea1">
-                You're proficient in the following languages :{" "}
+                {" "}
               </label>
               <textarea
-                className="form-control text"
+                className=""
                 name="response"
                 value={userinfo.response}
                 placeholder="The checkbox values will be displayed here "
