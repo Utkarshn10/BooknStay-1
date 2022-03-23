@@ -1,9 +1,9 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
-import Rating from '../../Rating'
-import ReactStars from 'react-rating-stars-component'
-import { Link } from 'react-router-dom'
+import {Card, ListGroup, ListGroupItem} from "react-bootstrap";
+import Rating from "../../Rating";
+import ReactStars from "react-rating-stars-component";
+import {Link} from "react-router-dom";
 
 export default function HotelCard(props) {
   return (
@@ -11,10 +11,7 @@ export default function HotelCard(props) {
       {/* <Rating/> */}
 
       <Card style={{width: "20rem"}}>
-        <Card.Img
-          variant="top"
-          src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
-        />
+        <Card.Img variant="top" src={props.photos} />
         <Card.Body>
           <Card.Title>{props.hotel_name} </Card.Title>
 
@@ -36,7 +33,7 @@ export default function HotelCard(props) {
         </ListGroup>
 
         <Card.Body>
-          <Card.Link href="#"> {props.user_rating}  </Card.Link>
+          <Card.Link href="#"> {props.user_rating} </Card.Link>
           {/* <Link to={`/hotel/${props._id}`}></Link> */}
           <Card.Link href="#">Read More..</Card.Link>
         </Card.Body>
