@@ -30,7 +30,10 @@ import RegisterPageAdmin from './components/pages/auth/RegisterPageAdmin'
 import HotelDetails from "./components/Admin/HotelDetails/HotelDetails";
 import { Context } from "./context/Context";
 import NewHotelDetails from "./components/Admin/HotelDetails/NewHotelDetails";
-
+import HotelPage from "./components/pages/HotelPage/HotelPage"
+import Home from "./components/pages/Home";
+import Checkbox from "./components/checkbox"
+import NewRoomDetails from "./components/Admin/RoomDetails/NewRoomDetails";
 
 const App = () => {
   const {user}= useContext(Context)
@@ -78,9 +81,14 @@ const App = () => {
         <Route path="/AdminRegister">{user ? <MainHomepage></MainHomepage>:<RegisterPageAdmin></RegisterPageAdmin>}</Route>
 
         <Route path="/forget-password" component={ ForgetPasswordPage } />
+        <Route path="/checkbox" component={Checkbox}/>
 
         <Route path="/home"><MainHomepage></MainHomepage></Route>
         <Route path="/addHotel" component={NewHotelDetails}/>
+        <Route path="/addRoom" component={NewRoomDetails}></Route>
+        <Route path="/hotel/:id" component={HotelPage}/>
+        <Route path="/hotelpage" component={Home}></Route>
+
 
       </Switch>
       <Footer />

@@ -1,6 +1,8 @@
 import React, {useState, useContext} from 'react'
 import axios from 'axios'
 import {Context} from "../../../context/Context"
+import { Link } from "react-router-dom";
+
 
 export default function NewHotelDetails() {
     const {user}= useContext(Context)
@@ -49,7 +51,7 @@ export default function NewHotelDetails() {
     <div>
         <form onSubmit={handleSubmit}>
             <input type="text" placeholder='hotelname' onChange={(e)=>setHotelName(e.target.value)}  />
-            <input type="text" placeholder='hotelname' onChange={(e)=>setHotelDesc(e.target.value)}  />
+            <input type="text" placeholder='hotel description' onChange={(e)=>setHotelDesc(e.target.value)}  />
             <input type="number" placeholder='hotelrating' onChange={(e)=>setHotelrating(e.target.value)}  />
             <input type="text" placeholder='locality' onChange={(e)=>setLocality(e.target.value)}  />
             <input type="text" placeholder='city' onChange={(e)=>setCity(e.target.value)} />
@@ -59,9 +61,10 @@ export default function NewHotelDetails() {
             <input type="text" placeholder='checkout' onChange={(e)=>setCheckout(e.target.value)} />
             <input type="number" placeholder='pincode' onChange={(e)=>setPincode(e.target.value)} />
             <input type="number" placeholder='price' onChange={(e)=>setPrice(e.target.value)} />
-            <input type="number" placeholder='userRating' onChange={(e)=>setUserrating(e.target.value)}  />
-            <button type="submit">Submit</button>
+            <input type="number" placeholder='userRating' onChange={(e)=>setUserrating(e.target.value)}/>
+            <button type="submit">SAVE</button>
         </form>
+        <Link to="/addRoom">Next</Link>
         {/* {console.log(hotelrating)} */}
     </div>
   )

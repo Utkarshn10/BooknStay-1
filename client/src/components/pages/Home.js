@@ -2,10 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import BookWidget from "../booking/BookWidget";
 import "../../styles/Home.scss";
+import Navbar from "../navbar/Navbar";
 
 const Home = () => {
   return (
     <div className="Home">
+    <Navbar></Navbar>
       <header
         className="header-main"
         style={{
