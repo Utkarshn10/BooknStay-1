@@ -31,6 +31,7 @@ import RegisterPageAdmin from './components/pages/auth/RegisterPageAdmin'
 import HotelDetails from "./components/Admin/HotelDetails/HotelDetails";
 import { Context } from "./context/Context";
 import NewHotelDetails from "./components/Admin/HotelDetails/NewHotelDetails";
+import google from "./components/auth/google"
 
 
 const App = () => {
@@ -84,6 +85,7 @@ const App = () => {
 
         <Route path="/home"><MainHomepage></MainHomepage></Route>
         <Route path="/addHotel" component={NewHotelDetails}/>
+        <Route path="/google" component={google}/>
 
       </Switch>
       <Footer />
