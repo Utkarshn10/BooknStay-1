@@ -33,7 +33,6 @@ import { Context } from "./context/Context";
 import NewHotelDetails from "./components/Admin/HotelDetails/NewHotelDetails";
 import HotelPage from "./components/pages/HotelPage/HotelPage"
 import Home from "./components/pages/Home";
-import Checkbox from "./components/checkbox"
 import NewRoomDetails from "./components/Admin/RoomDetails/NewRoomDetails";
 
 const App = () => {
