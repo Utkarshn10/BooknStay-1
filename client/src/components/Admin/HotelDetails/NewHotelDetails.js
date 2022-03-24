@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 import React, {useState, useContext} from "react";
 import axios from "axios";
 import {Context} from "../../../context/Context";
 import FileBase from "react-file-base64";
 import {NavItem} from "react-bootstrap";
+=======
+import React, {useState, useContext} from 'react'
+import axios from 'axios'
+import {Context} from "../../../context/Context"
+import { Link } from "react-router-dom";
+
+>>>>>>> ef5523176d3cf066b625ea5ca9e0bb692aba4048
 
 export default function NewHotelDetails() {
   const {user} = useContext(Context);

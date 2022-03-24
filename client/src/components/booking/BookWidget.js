@@ -34,11 +34,11 @@ export default function BookWidget() {
                   <input type="number" placeholder='Guests'></input>
                 </div>
 
-                <div id={styles.homebutton} style={{ height: "67px" }}>
+                {/* <div id={styles.homebutton} style={{ height: "67px" }}>
                   <button id={styles.homebutton} >
                     Search
                   </button>
-                </div>
+                </div> */}
 
               </div>
     </div>
