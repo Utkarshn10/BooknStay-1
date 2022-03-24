@@ -342,7 +342,7 @@ export default function NewHotelDetails() {
         <br></br>
 
         <div style={{display:"flex"}}>
-        <label for="indoorsports" style={{width:"50%"}}>Indoorsports</label>
+        <label style={{width:"50%"}} for="indoorsports" >Indoorsports</label>
         <input
           type="checkbox"
           onChange={(e) => setIndoorSports(e.target.value)}
