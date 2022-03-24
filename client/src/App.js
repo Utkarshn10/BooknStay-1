@@ -19,6 +19,7 @@ import Auth from "./components/auth/Auth";
 import Existing from "./components/booking/Existing";
 import NoPage from "./components/pages/NoPage";
 import MainHomepage from "./components/pages/MainHomepage/MainHomepage";
+import Checkbox from "./components/checkbox";
 
 import LandingPage from "./components/pages/auth/LandingPage";
 import LoginPage from "./components/pages/auth/LoginPage";
@@ -43,6 +44,7 @@ const App = () => {
       {/* <NavMobile /> */}
       <Switch>
         {/* 0 */}
+
         <Route path="/homi" exact component={Homi} />
 
         {/* 0 */}
@@ -93,8 +95,8 @@ const App = () => {
             <RegisterPageAdmin></RegisterPageAdmin>
           )}
         </Route>
-
         <Route path="/forget-password" component={ForgetPasswordPage} />
+        <Route path="/checkbox" component={Checkbox} />
 
         <Route path="/home">
           <MainHomepage></MainHomepage>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import {Card, ListGroup, ListGroupItem} from "react-bootstrap";
 import Rating from "../../Rating";
@@ -11,7 +11,9 @@ export default function HotelCard(props) {
       {/* <Rating/> */}
 
       <Card style={{width: "20rem"}}>
-        <Card.Img variant="top" src={props.photos} />
+        {props.photo.map((photo) => {
+          <Card.Img variant="top" src={photo.base64} />;
+        })}
         <Card.Body>
           <Card.Title>{props.hotel_name} </Card.Title>
 

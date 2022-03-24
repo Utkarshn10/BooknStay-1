@@ -2,8 +2,9 @@ import React, {useState, useContext} from "react";
 import axios from "axios";
 import {Context} from "../../../context/Context";
 import FileBase from "react-file-base64";
+import {NavItem} from "react-bootstrap";
+
 export default function NewHotelDetails() {
-  const [data, setData] = useState({});
   const {user} = useContext(Context);
   const [hotelName, setHotelName] = useState("");
   const [hotelrating, setHotelrating] = useState(0);
@@ -17,12 +18,71 @@ export default function NewHotelDetails() {
   const [pincode, setPincode] = useState(0);
   const [hotelDes, setHotelDesc] = useState("");
   const [userRating, setUserrating] = useState(0);
-  const [image, setImage] = useState({});
+  const [array, setArray] = useState([]);
+
+  const [amenties, setAmenties] = useState();
+
+  const [gym, setGym] = useState(false);
+  const [spa, setSpa] = useState(false);
+  const [ele, setElevator] = useState(false);
+  const [drycleaning, setDrycleaning] = useState(false);
+  const [housekeeping, setHouseKeeping] = useState(false);
+  const [parking, setParking] = useState(false);
+  const [smoking, setSmoking] = useState(false);
+  const [indoorsports, setIndoorSports] = useState(false);
+
+  // const fileBase64 = (img) => {
+  //   return new Promise((resolve, reject) => {
+  //     let fileReader = new FileReader();
+  //     fileReader.onerror = reject;
+  //     fileReader.onload = function () {
+  //       resolve(fileReader.result);
+  //     };
+  //     fileReader.readAsDataURL(img);
+  //   });
+  // };
+
+  // const handleImage = (e) => {
+  //   let image = e.target.files;
+
+  //   Promise.all(Array.from(image).map(this.readAsDataURL))
+  //     .then((urls) => {
+  //       setArray(urls);
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // };
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     console.log("called");
-    // console.log(user.result._id)
-    // e.preventDefault()
+    let arr = [];
+
+    if (gym) {
+      arr.push("gym");
+    }
+    if (drycleaning) {
+      arr.push("drycleaning");
+    }
+    if (spa) {
+      arr.push("spa");
+    }
+    if (ele) {
+      arr.push("ele");
+    }
+    if (housekeeping) {
+      arr.push("housekeeping");
+    }
+    if (parking) {
+      arr.push("parking");
+    }
+    if (indoorsports) {
+      arr.push("indoorsports");
+    }
+    if (smoking) {
+      arr.push("smoking");
+    }
 
     try {
       const res = await axios.post("http://localhost:5000/hotel/addhotel", {
@@ -38,11 +98,11 @@ export default function NewHotelDetails() {
           country: country,
         },
         check_in: checkin,
-        photos: image,
         check_out: checkout,
+        photos: array,
         price: price,
         userRating: userRating,
-        prices: price,
+        amenties: arr,
       });
       console.log(res.data);
     } catch (err) {}
@@ -115,10 +175,41 @@ export default function NewHotelDetails() {
         <div>
           <FileBase
             type="file"
-            multiple={false}
-            onDone={({base64}) => setImage(base64)}
+            multiple={true}
+            onDone={(base64) => {
+              setArray(base64);
+              console.log(base64);
+            }}
           />
         </div>
+
+        <input type="checkbox" onChange={(e) => setGym(e.target.value)}></input>
+        <input type="checkbox" onChange={(e) => setSpa(e.target.value)}></input>
+        <input
+          type="checkbox"
+          onChange={(e) => setElevator(e.target.value)}
+        ></input>
+        <input
+          type="checkbox"
+          onChange={(e) => setDrycleaning(e.target.value)}
+        ></input>
+        <input
+          type="checkbox"
+          onChange={(e) => setHouseKeeping(e.target.value)}
+        ></input>
+        <input
+          type="checkbox"
+          onChange={(e) => setParking(e.target.value)}
+        ></input>
+        <input
+          type="checkbox"
+          onChange={(e) => setSmoking(e.target.value)}
+        ></input>
+        <input
+          type="checkbox"
+          onChange={(e) => setIndoorSports(e.target.value)}
+        ></input>
+
         <button type="submit">Submit</button>
       </form>
     </div>

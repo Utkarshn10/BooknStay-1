@@ -21,7 +21,7 @@ const HotelDetailsSchema = new mongoose.Schema(
     hotel_rating: {
       type: Number,
       required: true,
-      unique: true,
+      // unique:true
     },
 
     hotel_start_date: {
