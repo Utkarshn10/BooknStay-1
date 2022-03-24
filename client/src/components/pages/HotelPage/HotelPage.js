@@ -17,7 +17,8 @@ const HotelPage = () => {
   const [state, setState] = useState()
   const [pincode, setPincode] = useState()
   const [country, setCountry] = useState()
-
+  const [amenties, setAmenties] = useState([])
+  let arr=[]
   useEffect(()=>{
     const fetchHotel = async() =>{
       const res = await axios.get(`http://localhost:5000/hotel/getHotel/${hotelId}`, {
@@ -30,9 +31,17 @@ const HotelPage = () => {
       setState(res.data.address.state)
       setPincode(res.data.address.pincode)
       setCountry(res.data.address.country)
+      setAmenties(res.data.amenties)
+      console.log(amenties)
+ 
+      
+      for(let i = 0; i<amenties.length; i++){
+        arr.push(amenties[i])
+      }
+      console.log(arr, "ARRRAYA")
 
+      // setAddress(res.data.addresss)   
 
-      // setAddress(res.data.addresss)
     }
     fetchHotel()
   })
@@ -70,8 +79,11 @@ const HotelPage = () => {
 
       {/* AMENTIES */}
       <div style={{display:"flex", justifyContent:"center", marginTop:"3rem"}}>
-        <AmentiesCard></AmentiesCard>
-        <AmentiesCard></AmentiesCard>
+        {
+          amenties.map((amenty)=>(
+            <AmentiesCard data={amenty}></AmentiesCard>
+          ))
+        }
       </div>
 
       {/* TIMING */}
@@ -104,10 +116,67 @@ const HotelPage = () => {
         </div>
       </section>
 
-      {/* ROOMS */}
-      <section>
-        <RoomCard></RoomCard>
+      <section className="spotlight">
+        <h1 className="alt-font">ROOMS AVAILABLE</h1>
+        <div className="card-row">
+          <div className="card">
+            <div>
+              <img src="/img/home/home_food.jpg" alt="home_food" />
+            </div>
+            <article>
+              <h2 className="alt-font">Basic Room</h2>
+              <p>
+              A room with the facility of single bed/Double Bed. It is meant for single occupancy. It has an attached bathroom, a small dressing table, a small bedside table, and a small writing table. Sometimes it has a single chair too.
+              </p>
+              <p>Number of Beds: 1</p>
+              <p>Maximum People Allowed: 2</p>
+              <p>Price: 3000</p>
+              <Link to="/dining">
+                <button className="btn contrast">Discover More</button>
+              </Link>
+            </article>
+          </div>
+          <div className="card">
+            <div>
+              <img src="/img/home/home_room.jpg" alt="home_room" />
+            </div>
+            <article>
+              <h2 className="alt-font">Deluxe Room</h2>
+              <p>
+              available in Single Deluxe and Double Deluxe variants. Deluxe room is well furnished. Some amenities are attached bathroom, a dressing table, a bedside table, a small writing table, a TV, and a small fridge. The floor is covered with carpet and most suitable for small families.
+              </p>
+              <p>Number of Beds: 1</p>
+              <p>Maximum People Allowed: 4</p>
+              <p>Price: 5000</p>
+              <Link to="/rooms">
+                <button className="btn contrast">Discover More</button>
+              </Link>
+            </article>
+          </div>
+          <div className="card">
+            <div>
+              <img src="/img/home/home_tour.jpg" alt="home_food" />
+            </div>
+            <article>
+              <h2 className="alt-font">Twin Room</h2>
+              <p>
+              This room provides two single beds with separate headboards. It is meant for two independent people. It also has a single bedside table shared between the two beds. It also has a single bedside table shared between the two beds.
+              </p>
+              <p>Number of Beds: 1</p>
+              <p>Maximum People Allowed: 4</p>
+              <p>Price: 5000</p>
+              <Link to="/tours">
+                <button className="btn contrast">Discover More</button>
+              </Link>
+            </article>
+          </div>
+        </div>
       </section>
+
+      {/* ROOMS */}
+      {/* <section>
+        <RoomCard></RoomCard>
+      </section> */}
     </div>
   );
 };

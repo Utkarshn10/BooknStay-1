@@ -72,8 +72,12 @@ const App = () => {
         {/* <Route path="*" exact component={NoPage} /> */}
         
         
+        {
+          user ? <Route exact path="/">{user.result.isAdmin==true ? <NewHotelDetails></NewHotelDetails>:<MainHomepage></MainHomepage> }</Route> 
+          :
+          <Route exact path="/"><LandingPage></LandingPage></Route> 
+        }
         
-        <Route exact path="/">{user ? <MainHomepage></MainHomepage>:<LandingPage></LandingPage> }</Route>
         
         <Route path="/Customer">{user ? <MainHomepage></MainHomepage>:<LoginPage></LoginPage>}</Route>
         <Route path="/register">{user ? <MainHomepage></MainHomepage>:<RegisterPage></RegisterPage>}</Route>
