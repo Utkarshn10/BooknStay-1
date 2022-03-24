@@ -15,15 +15,11 @@ const HotelDetailsSchema = new mongoose.Schema(
     },
     hotel_desc: {
       type: String,
-      unique: true,
     },
-
     hotel_rating: {
       type: Number,
       required: true,
-      // unique:true
     },
-
     hotel_start_date: {
       type: Date,
     },
