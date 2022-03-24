@@ -1,10 +1,10 @@
-import React, { useContext, useEffect } from "react";
+import React, {useContext, useEffect} from "react";
 import "./styles/App.scss";
-import { Route, Switch, useLocation } from "react-router-dom";
+import {Route, Switch, useLocation} from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import NavMobile from "./components/navbar/NavMoblile";
 // import Home from "./components/pages/Home";
-import Homi from "./components/pages/Home"
+import Homi from "./components/pages/Home";
 import Rooms from "./components/pages/rooms/Rooms";
 import Room from "./components/pages/rooms/Room";
 import Dining from "./components/pages/Dining";
@@ -19,26 +19,25 @@ import Auth from "./components/auth/Auth";
 import Existing from "./components/booking/Existing";
 import NoPage from "./components/pages/NoPage";
 import MainHomepage from "./components/pages/MainHomepage/MainHomepage";
-import Checkbox from "./components/checkbox"
+import Checkbox from "./components/checkbox";
 
-
-import LandingPage from './components/pages/auth/LandingPage'
-import LoginPage from './components/pages/auth/LoginPage'
-import LoginPageAdmin from './components/pages/auth/LoginPageAdmin'
-import ForgetPasswordPage from './components/pages/auth/ForgetPasswordPage'
-import RegisterPage from './components/pages/auth/RegisterPage'
-import RegisterPageAdmin from './components/pages/auth/RegisterPageAdmin'
+import LandingPage from "./components/pages/auth/LandingPage";
+import LoginPage from "./components/pages/auth/LoginPage";
+import LoginPageAdmin from "./components/pages/auth/LoginPageAdmin";
+import ForgetPasswordPage from "./components/pages/auth/ForgetPasswordPage";
+import RegisterPage from "./components/pages/auth/RegisterPage";
+import RegisterPageAdmin from "./components/pages/auth/RegisterPageAdmin";
 import HotelDetails from "./components/Admin/HotelDetails/HotelDetails";
-import { Context } from "./context/Context";
+import {Context} from "./context/Context";
 import NewHotelDetails from "./components/Admin/HotelDetails/NewHotelDetails";
 import HotelPage from "./components/pages/HotelPage/HotelPage"
 import Home from "./components/pages/Home";
 import NewRoomDetails from "./components/Admin/RoomDetails/NewRoomDetails";
 
 const App = () => {
-  const {user}= useContext(Context)
+  const {user} = useContext(Context);
   const location = useLocation();
-  /* const history = useHistory(); */ 
+  /* const history = useHistory(); */
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
@@ -48,14 +47,17 @@ const App = () => {
       {/* <NavMobile /> */}
       <Switch>
         {/* 0 */}
-        
+
         <Route path="/homi" exact component={Homi} />
 
         {/* 0 */}
 
         <Route path="/rooms" exact component={Rooms} />
         <Route
-          path="/rooms/:id" exact render={(props) => <Room {...props} />} />
+          path="/rooms/:id"
+          exact
+          render={(props) => <Room {...props} />}
+        />
         <Route path="/dining" exact component={Dining} />
         {/* 0 */}
         <Route path="/about" exact component={About} />
@@ -85,8 +87,16 @@ const App = () => {
         <Route path="/Admin">{user ? <MainHomepage></MainHomepage>:<LoginPageAdmin></LoginPageAdmin>}</Route>
         <Route path="/AdminRegister">{user ? <MainHomepage></MainHomepage>:<RegisterPageAdmin></RegisterPageAdmin>}</Route>
 
-        <Route path="/forget-password" component={ ForgetPasswordPage } />
-        <Route path="/checkbox" component={Checkbox}/>
+        <Route exact path="/">
+          {user ? <MainHomepage></MainHomepage> : <LandingPage></LandingPage>}
+        </Route>
+
+        <Route path="/Customer">
+          {user ? <MainHomepage></MainHomepage> : <LoginPage></LoginPage>}
+        </Route>
+        <Route path="/register">
+          {user ? <MainHomepage></MainHomepage> : <RegisterPage></RegisterPage>}
+        </Route>
 
         <Route path="/home"><MainHomepage></MainHomepage></Route>
         <Route path="/addHotel" component={NewHotelDetails}/>
@@ -95,6 +105,10 @@ const App = () => {
         <Route path="/hotelpage" component={Home}></Route>
 
 
+        <Route path="/home">
+          <MainHomepage></MainHomepage>
+        </Route>
+        <Route path="/addHotel" component={NewHotelDetails} />
       </Switch>
       <Footer />
     </>

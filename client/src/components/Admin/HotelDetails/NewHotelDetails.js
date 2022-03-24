@@ -3,6 +3,9 @@ import axios from 'axios'
 import {Context} from "../../../context/Context"
 import { Link } from "react-router-dom";
 
+import BackgroundImage from '../../pages/auth/assets/bg.png'
+
+
 
 export default function NewHotelDetails() {
   const { user } = useContext(Context);
@@ -160,68 +163,82 @@ export default function NewHotelDetails() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <header style={ HeaderStyle }>
+    <div style={{display:'flex',justifyContent:'center'}}>
+      <form onSubmit={handleSubmit}  >
+        <label for=''></label><br></br>
         <input
           type="text"
-          placeholder="hotelname"
+          placeholder="Hotelname"
           onChange={(e) => setHotelName(e.target.value)}
-        />
+        /><br></br>
+        <label for=''></label><br></br>
         <input
           type="text"
-          placeholder="hotelname"
+          placeholder="HotelDescription"
           onChange={(e) => setHotelDesc(e.target.value)}
-        />
+        /><br></br>
+        <label for=''></label><br></br>
         <input
           type="number"
-          placeholder="hotelrating"
+          placeholder="HotelRating"
           onChange={(e) => setHotelrating(e.target.value)}
-        />
+        /><br></br>
+        <label for=''></label><br></br>
         <input
           type="text"
-          placeholder="locality"
+          placeholder="Locality"
           onChange={(e) => setLocality(e.target.value)}
-        />
+        /><br></br>
+        <label for=''></label><br></br>
         <input
           type="text"
-          placeholder="city"
+          placeholder="City"
           onChange={(e) => setCity(e.target.value)}
-        />
+        /><br></br>
+        <label for=''></label><br></br>
         <input
           type="text"
-          placeholder="state"
+          placeholder="State"
           onChange={(e) => setState(e.target.value)}
-        />
+        /><br></br>
+        <label for=''></label><br></br>
         <input
           type="text"
-          placeholder="country"
+          placeholder="Country"
           onChange={(e) => setCountry(e.target.value)}
-        />
+        /><br></br>
+        <label for=''></label><br></br>
         <input
           type="text"
-          placeholder="checkin"
+          placeholder="Checkin"
           onChange={(e) => setCheckin(e.target.value)}
-        />
+        /><br></br>
+        <label for=''></label><br></br>
         <input
           type="text"
-          placeholder="checkout"
+          placeholder="Checkout"
           onChange={(e) => setCheckout(e.target.value)}
-        />
+        /><br></br>
+        <label for=''></label><br></br>
         <input
+        style={{padding:"3px"}}
           type="number"
-          placeholder="pincode"
+          placeholder="Pincode"
           onChange={(e) => setPincode(e.target.value)}
-        />
+        /><br></br>
+        <label for=''></label><br></br>
         <input
           type="number"
-          placeholder="price"
+          placeholder="Price"
           onChange={(e) => setPrice(e.target.value)}
-        />
+        /><br></br>
+        <label for=''></label><br></br>
         <input
           type="number"
-          placeholder="userRating"
+          placeholder="UserRating"
           onChange={(e) => setUserrating(e.target.value)}
-        />
+        /><br></br>
         {/* <input
           className=""
           type="checkbox"
@@ -254,40 +271,93 @@ export default function NewHotelDetails() {
           id="flexCheckDefault"
           onChange={handleChange}
         /> */}
-        <input type="checkbox" onChange={(e) => setGym(e.target.value)}></input>
-        <input type="checkbox" onChange={(e) => setSpa(e.target.value)}></input>
+        </form>
+        <form>
+
+        <h3 style={{color:'black', fontweight:'bolder',fontWeight:'bold'}}> Other facilities </h3>
+        
+        <br></br>
+
+        <div style={{display:"flex"}}>
+          <label for="gym" style={{width:"50%"}}> Gym</label>
+          <input type="checkbox"onChange={(e) => setGym(e.target.value)}></input><br></br>
+        </div>
+
+        <br></br>
+        <div style={{display:"flex"}}>
+        <label for="spa" style={{width:"50%"}}> Spa</label>
+        <input type="checkbox" onChange={(e) => setSpa(e.target.value)}></input><br></br>
+        
+        </div>
+        
+        <br></br>
+
+        <div style={{display:"flex"}}>
+        <label for="elevator" style={{width:"50%"}}> Elevator</label>
         <input
           type="checkbox"
-          onChange={(e) => setElevator(e.target.value)}
-        ></input>
+          onChange={(e) => setElevator(e.target.value)}></input><br></br>
+        
+        </div>
+        <br></br>
+
+        <div style={{display:"flex"}}>
+        <label for="drycleaning" style={{width:"50%"}}> DryCleaning</label>
         <input
           type="checkbox"
           onChange={(e) => setDrycleaning(e.target.value)}
-        ></input>
+        ></input><br></br> 
+        
+        </div>
+        <br></br>
+
+        <div style={{display:"flex"}}>
+        <label for="housekeeping" style={{width:"50%"}}>Housekeeping</label>
         <input
           type="checkbox"
           onChange={(e) => setHouseKeeping(e.target.value)}
-        ></input>
+        ></input><br></br>
+        
+        </div>
+        <br></br>
+
+        <div style={{display:"flex"}}>
+        <label for="parking" style={{width:"50%"}}>Parking</label>
         <input
           type="checkbox"
           onChange={(e) => setParking(e.target.value)}
-        ></input>
+        ></input><br></br>
+        
+        </div>
+        <br></br>
+
+        <div style={{display:"flex"}}>
+        <label for="smoking" style={{width:"50%"}}>Smoking</label>
         <input
           type="checkbox"
           onChange={(e) => setSmoking(e.target.value)}
-        ></input>
+        ></input><br></br>
+        
+        </div>
+        <br></br>
+
+        <div style={{display:"flex"}}>
+        <label style={{width:"50%"}} for="indoorsports" >Indoorsports</label>
         <input
           type="checkbox"
           onChange={(e) => setIndoorSports(e.target.value)}
-        ></input>
+        ></input><br></br>
+        </div>
+        
+        <br></br><br></br>
 
-        <button type="submit">Submit</button>
+        <button type="submit" style={{backgroundColor:'black',color:'white',fontSize:'20px',borderRadius:"5px", padding:"0 10px", marginTop:"8px"}}>Submit</button>
       </form>
       {/* {console.log(hotelrating)} */}
       <>
-        <div className="">
-          <div className="">
-            <h3 className="">Choose all the facilities your hotel offer !</h3>
+        {/* <div className=""> */}
+          {/* <div className=""> */}
+            {/* <h3 className="">Choose all the facilities your hotel offer !</h3> */}
 
             {/* <form>
               <div className="">
@@ -492,7 +562,7 @@ export default function NewHotelDetails() {
                 ></textarea>
               </div>
             </form> */}
-            <form>
+            {/* <form> */}
               {/* <input type="checkbox" onChange={(e)=> setGym(e.target.value)}></input>
                 <input type="checkbox" onChange={(e)=> setSpa(e.target.value)}></input>
                 <input type="checkbox" onChange={(e)=> setElevator(e.target.value)}></input>
@@ -501,13 +571,22 @@ export default function NewHotelDetails() {
                 <input type="checkbox" onChange={(e)=> setParking(e.target.value)}></input>
                 <input type="checkbox" onChange={(e)=> setSmoking(e.target.value)}></input>
                 <input type="checkbox" onChange={(e)=> setIndoorSports(e.target.value)}></input> */}
-            </form>
-          </div>
+            {/* </form> */}
+          {/* </div> */}
           {/* <button onClick={print}>Kuch bhi</button> */}
-        </div>
+        {/* </div> */}
       </>
 
       {/* console.log(arr); */}
     </div>
+    </header>
   );
+}
+const HeaderStyle = {
+  width: "100%",
+  height: "100vh",
+  background: `url(${BackgroundImage})`,
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover"
 }
