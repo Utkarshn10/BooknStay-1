@@ -2,6 +2,9 @@ import React, {useState, useContext} from 'react'
 import axios from 'axios'
 import {Context} from "../../../context/Context"
 
+import BackgroundImage from '../../pages/auth/assets/bg.png'
+
+
 export default function NewRoomDetails() {
     const {user}= useContext(Context)
 
@@ -34,17 +37,36 @@ export default function NewRoomDetails() {
     }
 
   return (
-    <div>
-        <form onSubmit={handleSubmit}>
-            <input type="text" placeholder='Room Type' onChange={(e)=>setRoomtype(e.target.value)}  />
-            <input type="text" placeholder='Room Description' onChange={(e)=>setRoomDesc(e.target.value)}  />
-            <input type="number" placeholder='Number of Beds' onChange={(e)=>setBeds(e.target.value)}  />
-            <input type="text" placeholder='Allowed People' onChange={(e)=>setPpl(e.target.value)}  />
-            <input type="text" placeholder='Price' onChange={(e)=>setPrice(e.target.value)} />
-            <input type="text" placeholder='Number of Rooms' onChange={(e)=>setNumberRooms(e.target.value)} />
-            <button type="submit">Submit</button>
+    <header style={ HeaderStyle }>
+
+    <div style={{display:'flex',justifyContent:'center',paddingTop:'30px'}}>
+        <form onSubmit={handleSubmit}  >
+            <input style={{padding:"3px"}} type="text" placeholder='Room Type' onChange={(e)=>setRoomtype(e.target.value)}  /><br></br>
+            <br></br>
+            <input style={{padding:"3px"}} type="text" placeholder='Room Description' onChange={(e)=>setRoomDesc(e.target.value)}  /><br></br>
+            <br></br>
+            <input style={{padding:"3px"}} type="number" placeholder='Number of Beds' onChange={(e)=>setBeds(e.target.value)}  /><br></br>
+            <br></br>
+            <input style={{padding:"3px"}} type="text" placeholder='Allowed People' onChange={(e)=>setPpl(e.target.value)}  /><br></br>
+            <br></br>
+            <input style={{padding:"3px"}} type="text" placeholder='Price' onChange={(e)=>setPrice(e.target.value)} /><br></br>
+            <br></br>
+            <input style={{padding:"3px"}} type="text" placeholder='Number of Rooms' onChange={(e)=>setNumberRooms(e.target.value)} /><br></br>
+            <br></br>
+            <button style={{padding:"3px",backgroundColor:'black',color:'white',fontSize:'20px',borderRadius:"5px", padding:"0 10px", marginTop:"8px" }} type="submit">Submit</button>
         </form>
         {/* {console.log(hotelrating)} */}
     </div>
+    </header>
+
   )
 }
+
+const HeaderStyle = {
+    width: "100%",
+    height: "100vh",
+    background: `url(${BackgroundImage})`,
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover"
+  }
