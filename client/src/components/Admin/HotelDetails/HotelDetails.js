@@ -73,20 +73,6 @@ const HotelDetails = (props) => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    // const formData = new FormData();
-    // Object.values(files).forEach((file) => {
-    //   formData.append("uploadImages", file);
-    // });
-
-    // try {
-    //   console.log("uploaded");
-    //   console.log(files);
-    // } catch (err) {
-    //   if (err.response.status === 500) {
-    //     console.log(err);
-    //   } else {
-    //     console.log(err.response.data.msg);
-    //   }
   };
 
   return (

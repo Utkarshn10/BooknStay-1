@@ -7,7 +7,6 @@ import BackgroundImage from "../../pages/auth/assets/bg.png";
 
 export default function NewHotelDetails() {
   const {user, dispatch} = useContext(Context);
-
   const [hotelName, setHotelName] = useState("");
   const [hotelrating, setHotelrating] = useState(0);
   const [locality, setLocality] = useState("");

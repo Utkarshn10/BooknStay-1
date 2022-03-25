@@ -18,6 +18,7 @@ const HotelPage = () => {
   const [pincode, setPincode] = useState()
   const [country, setCountry] = useState()
   const [amenties, setAmenties] = useState([])
+  const [pics, setPics] = useState([])
   let arr=[]
   useEffect(()=>{
     const fetchHotel = async() =>{
@@ -33,6 +34,7 @@ const HotelPage = () => {
       setCountry(res.data.address.country)
       setAmenties(res.data.amenties)
       console.log(amenties)
+      setPics(res.data.photos)
  
       
       for(let i = 0; i<amenties.length; i++){
@@ -114,6 +116,15 @@ const HotelPage = () => {
         <div className="descRight">
           <img src="/img/home/home_resort.jpg" alt="home_resort" />
         </div>
+      </section>
+
+      <section>
+        {pics.map((pic)=>(
+          <div style={{height:"20rem", width:"40rem"}}>
+            <img src={pic.base64}></img>
+          </div>
+
+        ))}
       </section>
 
       <section className="spotlight">

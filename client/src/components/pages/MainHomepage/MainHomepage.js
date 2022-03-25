@@ -1,4 +1,3 @@
-import HeroSection from "./HeroSection";
 import HotelCard from "./HotelCard";
 import React, {useContext, useEffect, useState, useRef} from "react";
 import {Context} from "../../../context/Context";
@@ -83,7 +82,7 @@ export default function MainHomepage() {
         </header>
       </div>
       {/* <HeroSection></HeroSection> */}
-      <div style={{display: "flex", justifyContent: "space-between"}}>
+      <div style={{display: "flex"}}>
         <div style={{width: "25rem", backgroundColor: "red"}}></div>
         <div
           ref={myRef}
