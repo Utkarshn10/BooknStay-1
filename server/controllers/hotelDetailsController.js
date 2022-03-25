@@ -63,3 +63,9 @@ export const getAllHotel = async (req, res) => {
     const hotels = await hotelDetailsModel.find()
     res.status(200).json(hotels)
 }
+
+export const getAllHotelByCity = async (req, res) =>{
+    console.log(req.body.city)
+    const hotels = await hotelDetailsModel.find({"address.city":req.body.city})
+    res.status(200).json(hotels)
+}

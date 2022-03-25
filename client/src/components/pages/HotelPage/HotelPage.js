@@ -6,6 +6,12 @@ import Navbar from "../../navbar/Navbar";
 import ReactStars from 'react-rating-stars-component'
 import { AmentiesCard } from "./AmentiesCard";
 import RoomCard from "./RoomCard";
+import {
+  CarouselControl,
+  Carousel,
+  CarouselItem,
+  CarouselIndicators,
+} from 'reactstrap';
 
 const HotelPage = () => {
   const id= window.location.pathname.split("/")
@@ -19,6 +25,12 @@ const HotelPage = () => {
   const [country, setCountry] = useState()
   const [amenties, setAmenties] = useState([])
   const [pics, setPics] = useState([])
+
+  const [activeIndex, setActiveIndex] = React.useState(0);
+  
+  // State for Animation
+  const [animating, setAnimating] = React.useState(false);
+
   let arr=[]
   useEffect(()=>{
     const fetchHotel = async() =>{
@@ -47,6 +59,36 @@ const HotelPage = () => {
     }
     fetchHotel()
   })
+
+  const itemLength = pics.length  - 1
+
+  const previousButton = () => {
+    if (animating) return;
+    const nextIndex = activeIndex === 0 ?
+        itemLength : activeIndex - 1;
+    setActiveIndex(nextIndex);
+}
+
+// Next button for Carousel
+const nextButton = () => {
+    if (animating) return;
+    const nextIndex = activeIndex === itemLength ?
+        0 : activeIndex + 1;
+    setActiveIndex(nextIndex);
+}
+
+const carouselItemData = pics.map((item) => {
+  return (
+      <CarouselItem
+          key={item.src}
+          onExited={() => setAnimating(false)}
+          onExiting={() => setAnimating(true)}
+      >
+          <img src={item.base64} alt={item.altText} />
+      </CarouselItem>
+  );
+});
+
   return (
     <div className="Home">
     <Navbar></Navbar>
@@ -114,18 +156,35 @@ const HotelPage = () => {
           </Link>
         </article>
         <div className="descRight">
-          <img src="/img/home/home_resort.jpg" alt="home_resort" />
+        <div style={{
+            display: 'block', width: 320, margin: 2 ,padding: 30
+        }}>
+            <Carousel previous={previousButton} next={nextButton}
+                activeIndex={activeIndex}>
+                <CarouselIndicators items={pics}
+                    activeIndex={activeIndex}
+                    onClickHandler={(newIndex) => {
+                        if (animating) return;
+                        setActiveIndex(newIndex);
+                    }} />
+                {carouselItemData}
+                <CarouselControl directionText="Prev"
+                    direction="prev" onClickHandler={previousButton} />
+                <CarouselControl directionText="Next"
+                    direction="next" onClickHandler={nextButton} />
+            </Carousel>
+        </div >
         </div>
       </section>
 
-      <section>
+      {/* <section>
         {pics.map((pic)=>(
           <div style={{height:"20rem", width:"40rem"}}>
             <img src={pic.base64}></img>
           </div>
 
         ))}
-      </section>
+      </section> */}
 
       <section className="spotlight">
         <h1 className="alt-font">ROOMS AVAILABLE</h1>
