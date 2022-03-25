@@ -272,6 +272,7 @@ export default function NewHotelDetails() {
           onChange={handleChange}
         /> */}
         </form>
+        
         <form>
 
         <h3 style={{color:'black', fontweight:'bolder',fontWeight:'bold'}}> Other facilities </h3>

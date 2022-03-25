@@ -43,6 +43,7 @@
     "react-file-base64": "^1.0.3",
     "react-icons": "^4.3.1",
     "react-loading-skeleton": "^2.1.1",
+    "react-material-ui-carousel": "^3.2.0",
     "react-multiple-image-input": "^1.0.0",
     "react-places-autocomplete": "^7.3.0",
     "react-rating-stars-component": "^2.2.0",
