@@ -4,10 +4,10 @@ const Footer = () => {
   return (
     <div className="Footer">
       <div>
-        <h2 className="alt-font">Suay Resort</h2>
+        <h2 className="alt-font">BookNStay</h2>
       </div>
       <div>
-        <p>2021 © LEOPOLDO ORTEGA. ALL RIGHTS RESERVED.</p>
+        <p>2022 © NIIT UNIVERSITY. ALL RIGHTS RESERVED.</p>
       </div>
     </div>
   );

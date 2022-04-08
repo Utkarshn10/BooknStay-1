@@ -27,7 +27,7 @@ const Navbar = () => {
         </div>
         <div>
           <Link to="/">
-            <h1 className="alt-font">SUAY RESORTS</h1>
+            <h1 style={{fontSize:"2rem", fontWeight:"bold"}} className="alt-font">BookNStay</h1>
           </Link>
         </div>
         <Link to="/booking">
@@ -38,13 +38,13 @@ const Navbar = () => {
         <Link to="/rooms">
           Rooms <span>&#183;</span>
         </Link>
-        <Link to="/dining">
+        {/* <Link to="/dining">
           Dining <span>&#183;</span>{" "}
-        </Link>
+        </Link> */}
         <Link to="/tours">
-          Tours <span>&#183;</span>{" "}
+          Tours
         </Link>
-        <Link to="/about">About</Link>
+        {/* <Link to="/about">About</Link> */}
       </div>
     </div>
   );

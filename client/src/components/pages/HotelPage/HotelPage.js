@@ -91,18 +91,18 @@ const carouselItemData = pics.map((item) => {
           onExited={() => setAnimating(false)}
           onExiting={() => setAnimating(true)}
       >
-          <img src={item.base64} alt={item.altText} />
+          <img style={{height:"22rem", width:"38rem "}} src={item.base64} alt={item.altText} />
       </CarouselItem>
   );
 });
 
   return (
-    <div className="Home">
+    <div className="Home" style={{background:"#F5F5F5"}}>
     <Navbar></Navbar>
       <header
         className="header-main"
         style={{
-          background: ` no-repeat center/cover url(${BackgroundImage})`,
+          background: `no-repeat center/cover url(${BackgroundImage})`,
         }}
       >
       </header>
@@ -121,7 +121,7 @@ const carouselItemData = pics.map((item) => {
         <div style={{display:"flex", justifyContent:"center", marginTop:"2rem"}}>
           <ReactStars
               count={5}
-              value={3}
+              value={4}
               size={50}
               edit={false}
               activeColor="#ffd700"
@@ -140,15 +140,15 @@ const carouselItemData = pics.map((item) => {
 
       {/* TIMING */}
       <div style={{display:"flex", justifyContent:"center", marginTop:"3rem"}}>
-        <p style={{marginRight:"2rem", fontSize:"1.5rem"}}>Check In Time: {hotelDetail.check_in}</p>
-        <p style={{fontSize:"1.5rem"}}>Check In Time: {hotelDetail.check_out}</p>
+        <p style={{marginRight:"2rem", fontSize:"1rem", background:"black", padding:"10px", color:"#ffffff"}}>Check In Time: {hotelDetail.check_in}</p>
+        <p style={{fontSize:"1rem", background:"black", padding:"10px", color:"#ffffff"}}>Check Out Time: {hotelDetail.check_out}</p>
       </div>
 
       {/* PHOTO ALBUM */}
-      <section style={{display:"flex", justifyContent:"center", backgroundColor:"#e5e5e5", padding:"2rem"}} className="desc_main">
+      <section style={{display:"flex", justifyContent:"center", backgroundColor:"#ffffff", padding:"2rem"}} className="desc_main">
         <article className="descLeft" style={{width:"40%"}}>
           {/* <div className="bg-light"></div> */}
-          <h1 className="alt-font">ABOUT US</h1>
+          <h1 className="alt-font" style={{fontWeight:"bold", fontSize:"1.5rem"}}>ABOUT US</h1>
           <p>
             {hotelDetail.hotel_desc}
           </p>
@@ -183,76 +183,6 @@ const carouselItemData = pics.map((item) => {
                 <button style={{backgroundColor:"#000000", color:"white"}}  className="btn contrast">Book Now!</button>
       </Link>
 
-      {/* <section>
-        {pics.map((pic)=>(
-          <div style={{height:"20rem", width:"40rem"}}>
-            <img src={pic.base64}></img>
-          </div>
-
-        ))}
-      </section> */}
-
-      {/* <section className="spotlight">
-        <h1 className="alt-font">ROOMS AVAILABLE</h1>
-        <div className="card-row">
-          <div className="card">
-            <div>
-              <img src={basicroom} alt="home_food" />
-            </div>
-            <article>
-              <h2 className="alt-font">Basic Room</h2>
-              <p>
-              A room with the facility of single bed/Double Bed. It is meant for single occupancy. It has an attached bathroom, a small dressing table, a small bedside table, and a small writing table. Sometimes it has a single chair too.
-              </p>
-              <p>Number of Beds: 1</p>
-              <p>Maximum People Allowed: 2</p>
-              <p>Price: 3000</p>
-              <Link to="/dining">
-                <button className="btn contrast">Discover More</button>
-              </Link>
-            </article>
-          </div>
-          <div className="card">
-            <div>
-              <img src={deluxroom} alt="home_room" />
-            </div>
-            <article>
-              <h2 className="alt-font">Deluxe Room</h2>
-              <p>
-              available in Single Deluxe and Double Deluxe variants. Deluxe room is well furnished. Some amenities are attached bathroom, a dressing table, a bedside table, a small writing table, a TV, and a small fridge. The floor is covered with carpet and most suitable for small families.
-              </p>
-              <p>Number of Beds: 1</p>
-              <p>Maximum People Allowed: 4</p>
-              <p>Price: 5000</p>
-              <Link to="/rooms">
-                <button className="btn contrast">Discover More</button>
-              </Link>
-            </article>
-          </div>
-          <div className="card">
-            <div>
-              <img src={twinroom} alt="home_food" />
-            </div>
-            <article>
-              <h2 className="alt-font">Twin Room</h2>
-              <p>
-              This room provides two single beds with separate headboards. It is meant for two independent people. It also has a single bedside table shared between the two beds. It also has a single bedside table shared between the two beds.
-              </p>
-              <p>Number of Beds: 1</p>
-              <p>Maximum People Allowed: 4</p>
-              <p>Price: 5000</p>
-              <Link to="/tours">
-                <button className="btn contrast">Discover More</button>
-              </Link>
-            </article>
-          </div>
-        </div>
-      </section> */}
-
-      {/* ROOMS */}
-      {/* <section>
-        <RoomCard></RoomCard>
-      </section> */}
     </div>
   );
 };
