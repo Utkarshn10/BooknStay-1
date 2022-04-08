@@ -191,6 +191,7 @@ export default function MainHomepage() {
               hotel_rating={hotel.hotel_rating}
               price={hotel.price}
               user_rating={hotel.userRating}
+              photos={hotel.photos}
             ></HotelCard>
           ))}
         </div>
