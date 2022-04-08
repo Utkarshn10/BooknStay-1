@@ -104,7 +104,7 @@ const App = () => {
         <Route path="/addRoom" component={NewRoomDetails}></Route>
         <Route path="/hotel/:id" component={HotelPage}/>
         <Route path="/hotelpage" component={Home}></Route>
-        <Route path="/checkout" component={checkout}></Route>
+        {/* <Route path="/checkout" component={checkout}></Route> */}
 
 
         <Route path="/home">

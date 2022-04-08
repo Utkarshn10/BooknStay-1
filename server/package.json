@@ -18,11 +18,6 @@
     "jsonwebtoken": "^8.5.1",
     "mdbreact": "^5.2.0",
     "mongoose": "^5.13.3",
-<<<<<<< HEAD
-    "nodemon": "^2.0.12",
-    "react-places-autocomplete": "^7.3.0"
-=======
     "nodemon": "^2.0.15"
->>>>>>> 80c41c2f430ab47543a2b8854146b5ad5fde0ee2
   }
 }
