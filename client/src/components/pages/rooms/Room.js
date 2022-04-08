@@ -32,7 +32,7 @@ const Room = (props) => {
           <p>{room.titleHeader}</p>
         </div>
 
-        <BookWidget />
+        {/* <BookWidget /> */}
       </header>
       <section className="desc">
         <h1 className="alt-font">{room.header}</h1>
