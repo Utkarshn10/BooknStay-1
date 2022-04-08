@@ -3,7 +3,7 @@ import React, {useContext, useEffect, useState, useRef} from "react";
 import {Context} from "../../../context/Context";
 import axios from "axios";
 import BookWidget from "../../booking/BookWidget";
-import BackgroundImage from "../../pages/auth/assets/homepageImage.jpg";
+import BackgroundImage from "../../pages/auth/assets/pknb.jpg";
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
 
@@ -50,9 +50,14 @@ export default function MainHomepage() {
             paddingTop: "1rem",
           }}
         >
-          <h4 style={{color: "white"}}>Welcome to BooknStay</h4>
+          <h4 style={{color: "white", fontSize:'25px'}}>Welcome to BooknStay!</h4>
           <button
             style={{
+              backgroundColor:'grey',
+              borderRadius:'5px',
+              fontSize:'20px',
+              padding: "0 10px",
+              marginTop: "0px",
               color: "white",
               display: "flex",
               justifyContent: "flex-end",
@@ -73,10 +78,13 @@ export default function MainHomepage() {
                 style={{
                   color: "white",
                   fontSize: "30px",
-                  backgroundColor: "green",
+                  backgroundColor: "black",
                   borderRadius: "5px",
                   padding: "0 10px",
                   marginTop: "10px",
+                  size:'50px',
+                  fontSize:'20px',
+                  
                 }}
                 onClick={executeScroll}
               >
@@ -88,8 +96,8 @@ export default function MainHomepage() {
       </div>
       {/* <HeroSection></HeroSection> */}
       <div style={{display: "flex"}}>
-        <div style={{width: "25rem", backgroundColor: "#fff"}}>
-        <form style={{width:'100%',backgroundColor:'#42a7c3'}}>
+        <div style={{width: "20rem", backgroundColor: "#fff", padding:'10px'}}>
+        <form style={{width:'100%', marginTop:' -10px'}}>
 
                 <p>
                   
@@ -98,7 +106,7 @@ export default function MainHomepage() {
                     
                     <div style={{display:"flex"}}>
 
-                    <label style={{width:'50%'}}>₹0-₹2000</label>
+                    <label style={{width:'70%', fontWeight:'bolder'}}>₹0-₹2000</label>
                     <input type="checkbox"  onChange={(e)=>{setPrice(e.target.value)}} required />
                     </div>
                 </p><br></br>
@@ -106,7 +114,7 @@ export default function MainHomepage() {
                 <p>
                     <div style={{display:"flex"}}>
                     
-                    <label style={{width:"50%"}}>₹2000-₹4000</label>
+                    <label style={{width:"70%",fontWeight:'bolder'}}>₹2000-₹4000</label>
                     <input type="checkbox"  onChange={(e)=>{setPrice(e.target.value)}} required />
                     </div>
                     
@@ -114,18 +122,17 @@ export default function MainHomepage() {
                 <p>
                     <div style={{display:"flex"}}>
                     
-                    <label style={{width:"50%"}}>₹4000-₹8000</label>
+                    <label style={{width:"70%",fontWeight:'bolder'}}>₹4000-₹8000</label>
                     <input type="checkbox"  onChange={(e)=>{setPrice(e.target.value)}} required />
                     </div>
                 </p><br></br>
                 
                 
-            </form>
-            <form style={{width:'100%',backgroundColor:'#BDEDFF'}} >
+            
                 <p>
-                    <label style={{fontWeight:'bold',fontSize:'20px'}} >Star Category</label><br></br><br></br>
+                    <label style={{fontWeight:'bold',fontSize:'20px',}} >Star Category</label><br></br><br></br>
                     <div style={{display:"flex"}}>
-                      <label style={{width:"50%"}}>5-Star</label>
+                      <label style={{width:"50%",fontWeight:'bolder'}}>5-Star</label>
                       <input type="checkbox"  onChange={(e)=>{setStar(e.target.value)}} required />
                     </div>
 
@@ -135,7 +142,7 @@ export default function MainHomepage() {
                 <p>
                     
                     <div style={{display:"flex"}}>
-                      <label style={{width:"50%"}}>4-Star</label>
+                      <label style={{width:"50%",fontWeight:'bolder'}}>4-Star</label>
                       <input type="checkbox"  onChange={(e)=>{setStar(e.target.value)}} required />
                     </div>
                 </p>
@@ -144,7 +151,7 @@ export default function MainHomepage() {
                 <p>
                     
                     <div style={{display:"flex"}}>
-                      <label style={{width:"50%"}}>3-Star</label>
+                      <label style={{width:"50%",fontWeight:'bolder'}}>3-Star</label>
                       <input type="checkbox"  onChange={(e)=>{setStar(e.target.value)}} required />
                     </div>
                 </p>
@@ -152,13 +159,12 @@ export default function MainHomepage() {
                 <br></br>
                 
                 
-            </form>
-            <form style={{width:'100%',backgroundColor:'#BDEDFF'}} >
+            
                 <p>
                     <label style={{fontWeight:'bold',fontSize:'20px'}}>User Rating</label><br></br><br></br>
 
                     <div style={{display:"flex"}}>
-                      <label style={{width:"50%"}}>4.5 & Above</label>
+                      <label style={{width:"50%",fontWeight:'bolder'}}>4.5 & Above</label>
                       <input type="checkbox"  onChange={(e)=>{setUserrating(e.target.value)}} required />
                     </div>
 
@@ -167,13 +173,13 @@ export default function MainHomepage() {
                 <br></br>
                 <p>
                     <div style={{display:'flex'}}>
-                    <label style={{width:'50%'}}>4 & Above</label>
+                    <label style={{width:'50%',fontWeight:'bolder'}}>4 & Above</label>
                     <input type="checkbox"  onChange={(e)=>{setUserrating(e.target.value)}} required />
                     </div>
                 </p><br></br>
                 <p>
                     <div style={{display:'flex'}}>  
-                    <label style={{width:'50%'}}>3 & Above</label>
+                    <label style={{width:'50%',fontWeight:'bolder'}}>3 & Above</label>
                     <input type="checkbox"  onChange={(e)=>{setUserrating(e.target.value)}} required />
                     </div>
                 </p>
@@ -204,9 +210,9 @@ export default function MainHomepage() {
 }
 
 const HeaderStyle = {
-  width: "100%",
-  height: "100vh",
-  background: `url(${BackgroundImage})`,
+  width: "1600px",
+  height: "700px",
+  background:`url(${BackgroundImage})`,
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
