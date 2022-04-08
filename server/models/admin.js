@@ -6,6 +6,7 @@ const AdminSchema = mongoose.Schema({
   password: {type: String, required: true},
   phone: {type: Number, required: true},
   id: {type: String},
+  isAdmin:{type: Boolean, required:true, default:true}
 });
 
 export default mongoose.model("Admin", AdminSchema);

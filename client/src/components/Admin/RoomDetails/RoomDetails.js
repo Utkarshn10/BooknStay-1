@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import {Box,Image,Button,RadioGroup,HStack,Radio,FormControl,Input,FormLabel,FormErrorMessage,FormHelperText, VStack, SimpleGrid, Heading, GridItem} from "@chakra-ui/react";
 import MultiImageInput from 'react-multiple-image-input';
 
+
 const  RoomDetails = (props) => {
     const [input, setInput] = useState('');
     const [files, setFiles] = useState([]);
@@ -43,6 +44,8 @@ const  RoomDetails = (props) => {
   
     return (
 
+
+
         <VStack>
           <Box width="40%">
             <VStack column={2} columnGap={3} rowGap={6} w="full">
@@ -58,6 +61,7 @@ const  RoomDetails = (props) => {
                     />
                 </FormControl>
                 </GridItem>
+                
                 <GridItem colSpan={1}>
                 <FormControl>
                     <FormLabel>Hotel Rating</FormLabel>
@@ -181,4 +185,6 @@ const  RoomDetails = (props) => {
 )
 }
 
+
  export default RoomDetails;
+
