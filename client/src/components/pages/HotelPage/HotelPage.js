@@ -179,6 +179,10 @@ const carouselItemData = pics.map((item) => {
         </div>
       </section>
 
+      <Link to="/rooms" style={{display:"flex", justifyContent:"center", marginTop:"3rem"}}>
+                <button style={{backgroundColor:"#000000", color:"white"}}  className="btn contrast">Book Now!</button>
+      </Link>
+
       {/* <section>
         {pics.map((pic)=>(
           <div style={{height:"20rem", width:"40rem"}}>
@@ -188,7 +192,7 @@ const carouselItemData = pics.map((item) => {
         ))}
       </section> */}
 
-      <section className="spotlight">
+      {/* <section className="spotlight">
         <h1 className="alt-font">ROOMS AVAILABLE</h1>
         <div className="card-row">
           <div className="card">
@@ -243,7 +247,7 @@ const carouselItemData = pics.map((item) => {
             </article>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ROOMS */}
       {/* <section>
