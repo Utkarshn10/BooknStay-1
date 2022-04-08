@@ -27,13 +27,12 @@ import LoginPageAdmin from "./components/pages/auth/LoginPageAdmin";
 import ForgetPasswordPage from "./components/pages/auth/ForgetPasswordPage";
 import RegisterPage from "./components/pages/auth/RegisterPage";
 import RegisterPageAdmin from "./components/pages/auth/RegisterPageAdmin";
-import HotelDetails from "./components/Admin/HotelDetails/HotelDetails";
 import {Context} from "./context/Context";
 import NewHotelDetails from "./components/Admin/HotelDetails/NewHotelDetails";
-import HotelPage from "./components/pages/HotelPage/HotelPage"
+import HotelPage from "./components/pages/HotelPage/HotelPage";
 import Home from "./components/pages/Home";
 import NewRoomDetails from "./components/Admin/RoomDetails/NewRoomDetails";
-import City from "../src/components/booking/city"
+import City from "../src/components/booking/city";
 const App = () => {
   const {user} = useContext(Context);
   const location = useLocation();
@@ -73,20 +72,42 @@ const App = () => {
         <Route path="/city" exact component={City}></Route>
         {/* <Route path="/admin" exact component={Auth} /> */}
         {/* <Route path="*" exact component={NoPage} /> */}
-        
-        
-        {
-          user ? <Route exact path="/">{user.result.isAdmin==true ? <NewHotelDetails></NewHotelDetails>:<MainHomepage></MainHomepage> }</Route> 
-          :
-          <Route exact path="/"><LandingPage></LandingPage></Route> 
-        }
-        
-        
-        <Route path="/Customer">{user ? <MainHomepage></MainHomepage>:<LoginPage></LoginPage>}</Route>
-        <Route path="/register">{user ? <MainHomepage></MainHomepage>:<RegisterPage></RegisterPage>}</Route>
-        
-        <Route path="/Admin">{user ? <MainHomepage></MainHomepage>:<LoginPageAdmin></LoginPageAdmin>}</Route>
-        <Route path="/AdminRegister">{user ? <MainHomepage></MainHomepage>:<RegisterPageAdmin></RegisterPageAdmin>}</Route>
+
+        {user ? (
+          <Route exact path="/">
+            {user.result.isAdmin == true ? (
+              <NewHotelDetails />
+            ) : (
+              <MainHomepage />
+            )}
+          </Route>
+        ) : (
+          <Route exact path="/">
+            <LandingPage></LandingPage>
+          </Route>
+        )}
+
+        <Route path="/Customer">
+          {user ? <MainHomepage></MainHomepage> : <LoginPage></LoginPage>}
+        </Route>
+        <Route path="/register">
+          {user ? <MainHomepage></MainHomepage> : <RegisterPage></RegisterPage>}
+        </Route>
+
+        <Route path="/Admin">
+          {user ? (
+            <MainHomepage></MainHomepage>
+          ) : (
+            <LoginPageAdmin></LoginPageAdmin>
+          )}
+        </Route>
+        <Route path="/AdminRegister">
+          {user ? (
+            <MainHomepage></MainHomepage>
+          ) : (
+            <RegisterPageAdmin></RegisterPageAdmin>
+          )}
+        </Route>
 
         <Route exact path="/">
           {user ? <MainHomepage></MainHomepage> : <LandingPage></LandingPage>}
@@ -99,13 +120,14 @@ const App = () => {
           {user ? <MainHomepage></MainHomepage> : <RegisterPage></RegisterPage>}
         </Route>
 
-        <Route path="/home"><MainHomepage></MainHomepage></Route>
-        <Route path="/addHotel" component={NewHotelDetails}/>
+        <Route path="/home">
+          <MainHomepage></MainHomepage>
+        </Route>
+        <Route path="/addHotel" component={NewHotelDetails} />
         <Route path="/addRoom" component={NewRoomDetails}></Route>
-        <Route path="/hotel/:id" component={HotelPage}/>
+        <Route path="/hotel/:id" component={HotelPage} />
         <Route path="/hotelpage" component={Home}></Route>
         {/* <Route path="/checkout" component={checkout}></Route> */}
-
 
         <Route path="/home">
           <MainHomepage></MainHomepage>
