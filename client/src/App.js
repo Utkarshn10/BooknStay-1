@@ -33,7 +33,7 @@ import NewHotelDetails from "./components/Admin/HotelDetails/NewHotelDetails";
 import HotelPage from "./components/pages/HotelPage/HotelPage"
 import Home from "./components/pages/Home";
 import NewRoomDetails from "./components/Admin/RoomDetails/NewRoomDetails";
-
+import City from "../src/components/booking/city"
 const App = () => {
   const {user} = useContext(Context);
   const location = useLocation();
@@ -70,6 +70,7 @@ const App = () => {
         <Route path="/booking/checkout" exact component={Checkout} />
         <Route path="/booking/confirm" exact component={Confirm} />
         <Route path="/booking/existing" exact component={Existing} />
+        <Route path="/city" exact component={City}></Route>
         {/* <Route path="/admin" exact component={Auth} /> */}
         {/* <Route path="*" exact component={NoPage} /> */}
         
@@ -103,6 +104,7 @@ const App = () => {
         <Route path="/addRoom" component={NewRoomDetails}></Route>
         <Route path="/hotel/:id" component={HotelPage}/>
         <Route path="/hotelpage" component={Home}></Route>
+        {/* <Route path="/checkout" component={checkout}></Route> */}
 
 
         <Route path="/home">

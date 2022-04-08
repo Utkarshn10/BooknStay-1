@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
+import { useHistory } from "react-router-dom";
 import { Link } from 'react-router-dom'
 const axios = require('axios');
 
+
 export default function RegisterPageAdmin() {
+    const history = useHistory();
+
     const [firstname, setFirstname] = useState()
     const [lastname, setLastname] = useState()
     const [email, setEmail] = useState()
@@ -23,6 +27,7 @@ export default function RegisterPageAdmin() {
             })
 
             setUser(res.data)
+            history.push("/Admin");
             // console.log(res.data)
 
         }catch(err){
