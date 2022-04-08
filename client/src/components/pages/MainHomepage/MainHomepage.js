@@ -88,14 +88,14 @@ export default function MainHomepage() {
       </div>
       {/* <HeroSection></HeroSection> */}
       <div style={{display: "flex"}}>
-        <div style={{width: "25rem", backgroundColor: "red"}}>
+        <div style={{width: "25rem", backgroundColor: "#000000"}}>
         <form style={{width:'100%'}}>
                 <p>
                   
                     <label style={{fontWeight:'bold'}}>Price</label><br></br>
                     <div style={{display:"flex"}}>
 
-                    <label style={{width:"50%"}}>  ₹0-₹2000</label>
+                    <label style={{width:'50%'}}>₹0-₹2000</label>
                     <input type="checkbox"  onChange={(e)=>{setPrice(e.target.value)}} required />
                     </div>
                 </p><br></br>
@@ -132,7 +132,7 @@ export default function MainHomepage() {
                 <p>
                     
                     <div style={{display:"flex"}}>
-                      <label style={{width:"50%"}}>5-Star</label>
+                      <label style={{width:"50%"}}>4-Star</label>
                       <input type="checkbox"  onChange={(e)=>{setStar(e.target.value)}} required />
                     </div>
                 </p>
@@ -141,7 +141,7 @@ export default function MainHomepage() {
                 <p>
                     
                     <div style={{display:"flex"}}>
-                      <label style={{width:"50%"}}>5-Star</label>
+                      <label style={{width:"50%"}}>3-Star</label>
                       <input type="checkbox"  onChange={(e)=>{setStar(e.target.value)}} required />
                     </div>
                 </p>
