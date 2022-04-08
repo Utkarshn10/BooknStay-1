@@ -145,7 +145,7 @@ const carouselItemData = pics.map((item) => {
             Welcome back to our Oceanside Resort, in the heart of Phuket's
             bustling, breathtaking city. Nestled between the dramatic peaks of
             Table Mountain and the roaring Atlantic Ocean, you’ll spend warm
-            leisurely days by glistening pools or basked in relaxation at our
+            leisurely <day>                       </day>s by glistening pools or basked in relaxation at our
             spa, and balmy evenings sampling local flavours at our exquisite
             restaurants, Nobu, Vista Bar & Lounge and Isola. Let us show you
             another side to Phuket. Here&Now.

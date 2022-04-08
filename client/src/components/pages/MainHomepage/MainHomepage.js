@@ -10,6 +10,11 @@ const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
 export default function MainHomepage() {
   const {user, dispatch} = useContext(Context);
   const [hotels, setHotels] = useState([]);
+  const [Price, setPrice] = useState(false);
+  const [Star, setStar] = useState(false);
+  const [UserRating, setUserrating] = useState(false);
+
+
 
   useEffect(() => {
     var fetchHotels = async () => {
@@ -83,7 +88,97 @@ export default function MainHomepage() {
       </div>
       {/* <HeroSection></HeroSection> */}
       <div style={{display: "flex"}}>
-        <div style={{width: "25rem", backgroundColor: "red"}}></div>
+        <div style={{width: "25rem", backgroundColor: "red"}}>
+        <form style={{width:'100%'}}>
+                <p>
+                  
+                    <label style={{fontWeight:'bold'}}>Price</label><br></br>
+                    <div style={{display:"flex"}}>
+
+                    <label style={{width:"50%"}}>  ₹0-₹2000</label>
+                    <input type="checkbox"  onChange={(e)=>{setPrice(e.target.value)}} required />
+                    </div>
+                </p><br></br>
+                
+                <p>
+                    <div style={{display:"flex"}}>
+                    
+                    <label style={{width:"50%"}}>₹2000-₹4000</label>
+                    <input type="checkbox"  onChange={(e)=>{setPrice(e.target.value)}} required />
+                    </div>
+                    
+                </p><br></br>
+                <p>
+                    <div style={{display:"flex"}}>
+                    
+                    <label style={{width:"50%"}}>₹4000-₹8000</label>
+                    <input type="checkbox"  onChange={(e)=>{setPrice(e.target.value)}} required />
+                    </div>
+                </p><br></br>
+                
+                
+            </form>
+            <form style={{width:'100%'}} >
+                <p>
+                    <label ><strong>Star Category</strong></label><br></br>
+                    <div style={{display:"flex"}}>
+                      <label style={{width:"50%"}}>5-Star</label>
+                      <input type="checkbox"  onChange={(e)=>{setStar(e.target.value)}} required />
+                    </div>
+
+                </p>
+                
+                <br></br>
+                <p>
+                    
+                    <div style={{display:"flex"}}>
+                      <label style={{width:"50%"}}>5-Star</label>
+                      <input type="checkbox"  onChange={(e)=>{setStar(e.target.value)}} required />
+                    </div>
+                </p>
+                
+                <br></br>
+                <p>
+                    
+                    <div style={{display:"flex"}}>
+                      <label style={{width:"50%"}}>5-Star</label>
+                      <input type="checkbox"  onChange={(e)=>{setStar(e.target.value)}} required />
+                    </div>
+                </p>
+                
+                <br></br>
+                
+                
+            </form>
+            <form style={{width:'100%'}} >
+                <p>
+                    <label><strong>User Rating</strong></label><br></br>
+
+                    <div style={{display:"flex"}}>
+                      <label style={{width:"50%"}}>4.5 & Above</label>
+                      <input type="checkbox"  onChange={(e)=>{setUserrating(e.target.value)}} required />
+                    </div>
+
+                </p>
+                
+                <br></br>
+                <p>
+                    <div style={{display:'flex'}}>
+                    <label style={{width:'50%'}}>4 & Above</label>
+                    <input type="checkbox"  onChange={(e)=>{setUserrating(e.target.value)}} required />
+                    </div>
+                </p><br></br>
+                <p>
+                    <div style={{display:'flex'}}>  
+                    <label style={{width:'50%'}}>3 & Above</label>
+                    <input type="checkbox"  onChange={(e)=>{setUserrating(e.target.value)}} required />
+                    </div>
+                </p>
+                
+                
+            </form>
+                
+        </div>
         <div
           ref={myRef}
           style={{display: "flex", margin: "20px", flexWrap: "wrap"}}
