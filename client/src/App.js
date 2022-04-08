@@ -20,7 +20,7 @@ import Existing from "./components/booking/Existing";
 import NoPage from "./components/pages/NoPage";
 import MainHomepage from "./components/pages/MainHomepage/MainHomepage";
 import Checkbox from "./components/checkbox"
-
+import checkout from "./components/pages/Checkout/checkout"
 
 import LandingPage from './components/pages/auth/LandingPage'
 import LoginPage from './components/pages/auth/LoginPage'
@@ -31,9 +31,10 @@ import RegisterPageAdmin from './components/pages/auth/RegisterPageAdmin'
 import HotelDetails from "./components/Admin/HotelDetails/HotelDetails";
 import { Context } from "./context/Context";
 import NewHotelDetails from "./components/Admin/HotelDetails/NewHotelDetails";
-import google from "./components/auth/google"
-
-
+import HotelPage from "./components/pages/HotelPage/HotelPage"
+import Home from "./components/pages/Home";
+import NewRoomDetails from "./components/Admin/RoomDetails/NewRoomDetails";
+import City from "../src/components/booking/city"
 const App = () => {
   const {user}= useContext(Context)
   const location = useLocation();
@@ -67,6 +68,7 @@ const App = () => {
         <Route path="/booking/checkout" exact component={Checkout} />
         <Route path="/booking/confirm" exact component={Confirm} />
         <Route path="/booking/existing" exact component={Existing} />
+        <Route path="/city" exact component={City}></Route>
         {/* <Route path="/admin" exact component={Auth} /> */}
         {/* <Route path="*" exact component={NoPage} /> */}
         
@@ -85,7 +87,11 @@ const App = () => {
 
         <Route path="/home"><MainHomepage></MainHomepage></Route>
         <Route path="/addHotel" component={NewHotelDetails}/>
-        <Route path="/google" component={google}/>
+        <Route path="/addRoom" component={NewRoomDetails}></Route>
+        <Route path="/hotel/:id" component={HotelPage}/>
+        <Route path="/hotelpage" component={Home}></Route>
+        <Route path="/checkout" component={checkout}></Route>
+
 
       </Switch>
       <Footer />

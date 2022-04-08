@@ -1,6 +1,8 @@
-import React, { useState, useContext } from "react";
-import axios from "axios";
-import { Context } from "../../../context/Context";
+import React, {useState, useContext} from 'react'
+import axios from 'axios'
+import {Context} from "../../../context/Context"
+import { Link } from "react-router-dom";
+
 
 export default function NewHotelDetails() {
   const { user } = useContext(Context);

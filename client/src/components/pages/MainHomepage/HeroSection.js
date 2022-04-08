@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom'
 import "../../../../src/App.css"
 import BookWidget from '../../booking/BookWidget'
 
-import BackgroundImage from '../../pages/auth/assets/bg.png'
+import BackgroundImage from '../../pages/auth/assets/homepageImage.jpg'
 
 export default function HeroSection() {
     return (
         <header style={ HeaderStyle }>
             <div style={{paddingTop:"20rem"}}><BookWidget></BookWidget></div>
-            {/* <p className="main-para text-center">join us now and don't waste time</p> */}
         </header>
     )
 }
