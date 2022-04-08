@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useHistory } from "react-router-dom";
+
 const axios = require('axios');
 
 export default function SignUpPage() {
-
-
+    const history = useHistory();
     const [firstname, setFirstname] = useState()
     const [lastname, setLastname] = useState()
     const [email, setEmail] = useState()
@@ -24,6 +25,7 @@ export default function SignUpPage() {
             })
 
             setUser(res.data)
+            history.push("/Customer");
 
         }catch(err){
 
