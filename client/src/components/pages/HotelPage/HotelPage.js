@@ -12,6 +12,11 @@ import {
   CarouselItem,
   CarouselIndicators,
 } from 'reactstrap';
+import BackgroundImage from '../auth/assets/homepageImage.jpg'
+
+import basicroom from '../auth/assets/basicroom.jpg'
+import deluxroom from '../auth/assets/delux.jpg'
+import twinroom from '../auth/assets/twinroom.jpg'
 
 const HotelPage = () => {
   const id= window.location.pathname.split("/")
@@ -23,6 +28,7 @@ const HotelPage = () => {
   const [state, setState] = useState()
   const [pincode, setPincode] = useState()
   const [country, setCountry] = useState()
+  const [rating, setRating] = useState(0)
   const [amenties, setAmenties] = useState([])
   const [pics, setPics] = useState([])
 
@@ -46,6 +52,7 @@ const HotelPage = () => {
       setCountry(res.data.address.country)
       setAmenties(res.data.amenties)
       console.log(amenties)
+      setRating(res.data.hotel_rating)
       setPics(res.data.photos)
  
       
@@ -95,28 +102,29 @@ const carouselItemData = pics.map((item) => {
       <header
         className="header-main"
         style={{
-          background: ' no-repeat center/cover url("/img/home/home.jpg")',
+          background: ` no-repeat center/cover url(${BackgroundImage})`,
         }}
       >
       </header>
 
       <section className="desc">
         {/* Hotel Name */}
-        <h1 className="alt-font">{hotelDetail.hotel_name}</h1>
+        <h1 style={{fontSize:"5.5rem", textTransform: "uppercase"}} className="alt-font">{hotelDetail.hotel_name}</h1>
 
         {/* Hotel Address */}
-        <p>{`${locality}, ${city}, ${state}, ${country}, ${pincode}`}</p>
+        <p style={{fontSize:"1.4rem", fontWeight:"400"}}>{`${locality}, ${city}, ${state}, ${country}, ${pincode}`}</p>
         
         {/* Hotel Description */}
-        <p>{hotelDetail.hotel_desc}</p>
+        {/* <p style={{marginTop:"3rem"}}>{hotelDetail.hotel_desc}</p> */}
         
         {/* Hotel Rating */}
-        <div style={{margin:"0 auto"}}>
+        <div style={{display:"flex", justifyContent:"center", marginTop:"2rem"}}>
           <ReactStars
               count={5}
-              value={hotelDetail.hotel_rating}
+              value={3}
               size={50}
               edit={false}
+              activeColor="#ffd700"
             />
         </div>
       </section>
@@ -132,34 +140,28 @@ const carouselItemData = pics.map((item) => {
 
       {/* TIMING */}
       <div style={{display:"flex", justifyContent:"center", marginTop:"3rem"}}>
-        <p style={{marginRight:"2rem"}}>Check In Time: {hotelDetail.check_in}</p>
-        <p>Check In Time: {hotelDetail.check_out}</p>
+        <p style={{marginRight:"2rem", fontSize:"1.5rem"}}>Check In Time: {hotelDetail.check_in}</p>
+        <p style={{fontSize:"1.5rem"}}>Check In Time: {hotelDetail.check_out}</p>
       </div>
 
       {/* PHOTO ALBUM */}
-      <section className="desc_main">
-        <article className="descLeft">
-          <div className="bg-light"></div>
-          <h1 className="alt-font">PHUKET IS CALLING</h1>
+      <section style={{display:"flex", justifyContent:"center", backgroundColor:"#e5e5e5", padding:"2rem"}} className="desc_main">
+        <article className="descLeft" style={{width:"40%"}}>
+          {/* <div className="bg-light"></div> */}
+          <h1 className="alt-font">ABOUT US</h1>
           <p>
-            Welcome back to our Oceanside Resort, in the heart of Phuket's
-            bustling, breathtaking city. Nestled between the dramatic peaks of
-            Table Mountain and the roaring Atlantic Ocean, you’ll spend warm
-            leisurely <day>                       </day>s by glistening pools or basked in relaxation at our
-            spa, and balmy evenings sampling local flavours at our exquisite
-            restaurants, Nobu, Vista Bar & Lounge and Isola. Let us show you
-            another side to Phuket. Here&Now.
+            {hotelDetail.hotel_desc}
           </p>
-          <h2>RESORT OPEN</h2>
-          <Link to="/rooms">
+          {/* <Link to="/rooms">
             <button className="btn contrast">Discover More</button>
-          </Link>
+          </Link> */}
         </article>
-        <div className="descRight">
+        <div className="descRight" style={{width:"60%"}}>
         <div style={{
-            display: 'block', width: 320, margin: 2 ,padding: 30
+            // margin: 2 ,padding: 30
         }}>
             <Carousel previous={previousButton} next={nextButton}
+              interval={2000}
                 activeIndex={activeIndex}>
                 <CarouselIndicators items={pics}
                     activeIndex={activeIndex}
@@ -191,7 +193,7 @@ const carouselItemData = pics.map((item) => {
         <div className="card-row">
           <div className="card">
             <div>
-              <img src="/img/home/home_food.jpg" alt="home_food" />
+              <img src={basicroom} alt="home_food" />
             </div>
             <article>
               <h2 className="alt-font">Basic Room</h2>
@@ -208,7 +210,7 @@ const carouselItemData = pics.map((item) => {
           </div>
           <div className="card">
             <div>
-              <img src="/img/home/home_room.jpg" alt="home_room" />
+              <img src={deluxroom} alt="home_room" />
             </div>
             <article>
               <h2 className="alt-font">Deluxe Room</h2>
@@ -225,7 +227,7 @@ const carouselItemData = pics.map((item) => {
           </div>
           <div className="card">
             <div>
-              <img src="/img/home/home_tour.jpg" alt="home_food" />
+              <img src={twinroom} alt="home_food" />
             </div>
             <article>
               <h2 className="alt-font">Twin Room</h2>
