@@ -33,7 +33,7 @@ import NewHotelDetails from "./components/Admin/HotelDetails/NewHotelDetails";
 import HotelPage from "./components/pages/HotelPage/HotelPage"
 import Home from "./components/pages/Home";
 import NewRoomDetails from "./components/Admin/RoomDetails/NewRoomDetails";
-
+import City from './components/pages/City'
 const App = () => {
   const {user} = useContext(Context);
   const location = useLocation();
@@ -103,6 +103,7 @@ const App = () => {
         <Route path="/addRoom" component={NewRoomDetails}></Route>
         <Route path="/hotel/:id" component={HotelPage}/>
         <Route path="/hotelpage" component={Home}></Route>
+        <Route path="/city" component={City}></Route>
 
 
         <Route path="/home">

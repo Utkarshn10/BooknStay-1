@@ -3,10 +3,12 @@ import { fromUnixTime } from 'date-fns'
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Context } from '../../../context/Context'
+import { useHistory } from "react-router-dom";
 
 
 
 export default function SignInPage() {
+    const history = useHistory();
 
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
@@ -22,6 +24,7 @@ export default function SignInPage() {
                 password:password
             })
             dispatch({type: "LOGIN_SUCCESS", payload: res.data})
+            history.push("/");
         }catch(err){
             dispatch({type: "LOGIN_FAILURE"})
         }
