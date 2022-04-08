@@ -6,6 +6,7 @@ import Navbar from "../../navbar/Navbar";
 import ReactStars from 'react-rating-stars-component'
 import { AmentiesCard } from "./AmentiesCard";
 import RoomCard from "./RoomCard";
+import { Carousel } from "react-bootstrap";
 
 const HotelPage = () => {
   const id= window.location.pathname.split("/")
@@ -103,7 +104,7 @@ const HotelPage = () => {
             Welcome back to our Oceanside Resort, in the heart of Phuket's
             bustling, breathtaking city. Nestled between the dramatic peaks of
             Table Mountain and the roaring Atlantic Ocean, you’ll spend warm
-            leisurely days by glistening pools or basked in relaxation at our
+            leisurely <day>                       </day>s by glistening pools or basked in relaxation at our
             spa, and balmy evenings sampling local flavours at our exquisite
             restaurants, Nobu, Vista Bar & Lounge and Isola. Let us show you
             another side to Phuket. Here&Now.
@@ -114,17 +115,21 @@ const HotelPage = () => {
           </Link>
         </article>
         <div className="descRight">
-          <img src="/img/home/home_resort.jpg" alt="home_resort" />
+        <Carousel variant="dark">
+          {pics.map((pic) =>(
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={pic.base64}
+                alt="First slide"
+              />
+            </Carousel.Item>
+          ))}
+        </Carousel>
         </div>
       </section>
 
       <section>
-        {pics.map((pic)=>(
-          <div style={{height:"20rem", width:"40rem"}}>
-            <img src={pic.base64}></img>
-          </div>
-
-        ))}
       </section>
 
       <section className="spotlight">
