@@ -73,7 +73,7 @@ import './city.css';
 export const City = () => {
   return (
     <div >
-      <input type="text" className='city' placeholder='   Enter City'/>
+      <input style={{border:"1px solid black"}} type="text" className='city' placeholder='   Enter City'/>
 
     </div>
   )
