@@ -1,4 +1,3 @@
-import HeroSection from "./HeroSection";
 import HotelCard from "./HotelCard";
 import React, {useContext, useEffect, useState, useRef} from "react";
 import {Context} from "../../../context/Context";
@@ -88,81 +87,98 @@ export default function MainHomepage() {
         </header>
       </div>
       {/* <HeroSection></HeroSection> */}
-      <div style={{display: "flex", justifyContent: "space-between"}}>
-        <div style={{width: "25rem", borderRight:'solid',borderColor:'#888888',borderBlockWidth:'10px'}}>
-          <form style={{backgroundColor:"#FFF380",boxShadow: '5px 10px 18px #888888'}}>
-          <h3 style={{color:'black',fontSize:'25px',fontWeight:'bold'}}> Price </h3>
-          <br></br>
-        <div style={{display:"flex"}}>
-          <label for="" style={{width:"50%"}}>₹ 0 - ₹ 2000</label>
-          <input type="checkbox"onChange={(e) => setPrice(e.target.value)}></input><br></br>
+      <div style={{display: "flex"}}>
+        <div style={{width: "25rem", backgroundColor: "red"}}>
+        <form style={{width:'100%'}}>
+                <p>
+                  
+                    <label style={{fontWeight:'bold'}}>Price</label><br></br>
+                    <div style={{display:"flex"}}>
+
+                    <label style={{width:"50%"}}>  ₹0-₹2000</label>
+                    <input type="checkbox"  onChange={(e)=>{setPrice(e.target.value)}} required />
+                    </div>
+                </p><br></br>
+                
+                <p>
+                    <div style={{display:"flex"}}>
+                    
+                    <label style={{width:"50%"}}>₹2000-₹4000</label>
+                    <input type="checkbox"  onChange={(e)=>{setPrice(e.target.value)}} required />
+                    </div>
+                    
+                </p><br></br>
+                <p>
+                    <div style={{display:"flex"}}>
+                    
+                    <label style={{width:"50%"}}>₹4000-₹8000</label>
+                    <input type="checkbox"  onChange={(e)=>{setPrice(e.target.value)}} required />
+                    </div>
+                </p><br></br>
+                
+                
+            </form>
+            <form style={{width:'100%'}} >
+                <p>
+                    <label ><strong>Star Category</strong></label><br></br>
+                    <div style={{display:"flex"}}>
+                      <label style={{width:"50%"}}>5-Star</label>
+                      <input type="checkbox"  onChange={(e)=>{setStar(e.target.value)}} required />
+                    </div>
+
+                </p>
+                
+                <br></br>
+                <p>
+                    
+                    <div style={{display:"flex"}}>
+                      <label style={{width:"50%"}}>5-Star</label>
+                      <input type="checkbox"  onChange={(e)=>{setStar(e.target.value)}} required />
+                    </div>
+                </p>
+                
+                <br></br>
+                <p>
+                    
+                    <div style={{display:"flex"}}>
+                      <label style={{width:"50%"}}>5-Star</label>
+                      <input type="checkbox"  onChange={(e)=>{setStar(e.target.value)}} required />
+                    </div>
+                </p>
+                
+                <br></br>
+                
+                
+            </form>
+            <form style={{width:'100%'}} >
+                <p>
+                    <label><strong>User Rating</strong></label><br></br>
+
+                    <div style={{display:"flex"}}>
+                      <label style={{width:"50%"}}>4.5 & Above</label>
+                      <input type="checkbox"  onChange={(e)=>{setUserrating(e.target.value)}} required />
+                    </div>
+
+                </p>
+                
+                <br></br>
+                <p>
+                    <div style={{display:'flex'}}>
+                    <label style={{width:'50%'}}>4 & Above</label>
+                    <input type="checkbox"  onChange={(e)=>{setUserrating(e.target.value)}} required />
+                    </div>
+                </p><br></br>
+                <p>
+                    <div style={{display:'flex'}}>  
+                    <label style={{width:'50%'}}>3 & Above</label>
+                    <input type="checkbox"  onChange={(e)=>{setUserrating(e.target.value)}} required />
+                    </div>
+                </p>
+                
+                
+            </form>
+                
         </div>
-        <br></br>
-        <div style={{display:"flex"}}>
-          <label for="" style={{width:"50%"}}>₹ 2000 - ₹ 4000</label>
-          <input type="checkbox"onChange={(e) => setPrice(e.target.value)}></input><br></br>
-        </div>
-        <br></br>
-        <div style={{display:"flex"}}>
-          <label for="" style={{width:"50%"}}>₹ 4000 - ₹ 8000</label>
-          <input type="checkbox"onChange={(e) => setPrice(e.target.value)}></input><br></br>
-        </div>
-
-        <br></br>
-
-          </form>
-
-
-
-          <form style={{backgroundColor:"#FFF380", width:"100%",boxShadow: '5px 10px 18px #888888'}}>
-          <h3 style={{color:'black', fontSize:'25px',fontWeight:'bold'}}> Star Category </h3>
-          <br></br>
-        <div style={{display:"flex" }}>
-          <label for="" style={{width:"50%"}}>3 Star</label>
-          <input type="checkbox"onChange={(e) => setStar(e.target.value)}></input><br></br>
-        </div>
-        <br></br>
-        <div style={{display:"flex"}}>
-          <label for="" style={{width:"50%"}}>4 Star</label>
-          <input type="checkbox"onChange={(e) => setStar(e.target.value)}></input><br></br>
-        </div>
-        <br></br>
-        <div style={{display:"flex"}}>
-          <label for="" style={{width:"50%"}}>5 Star</label>
-          <input type="checkbox"onChange={(e) => setStar(e.target.value)}></input><br></br>
-        </div>
-        <br></br>
-
-          </form>
-
-
-
-
-          <form style={{backgroundColor:"#FFF380",boxShadow: '5px 10px 18px #888888'}}>
-          <h3 style={{color:'black',fontWeight:'bold',fontSize:'25px'}}> UserRating </h3>
-          <br></br>
-        <div style={{display:"flex"}}>
-          <label for="" style={{width:"50%"}}>4.5 and Above (Excellent)</label>
-          <input type="checkbox"onChange={(e) => setUserrating(e.target.value)}></input><br></br>
-        </div>
-        <br></br>
-        <div style={{display:"flex"}}>
-          <label for="" style={{width:"50%"}}>4 and Above <br></br>(Very Good)</label>
-          <input type="checkbox"onChange={(e) => setUserrating(e.target.value)}></input><br></br>
-        </div>
-        <br></br>
-        <div style={{display:"flex"}}>
-          <label for="" style={{width:"50%"}}>3 and Above <br></br>(Good)</label>
-          <input type="checkbox"onChange={(e) => setUserrating(e.target.value)}></input><br></br>
-        </div>
-        <br></br>
-
-          </form>
-
-
-
-        </div>
-        
         <div
           ref={myRef}
           style={{display: "flex", margin: "20px", flexWrap: "wrap"}}
