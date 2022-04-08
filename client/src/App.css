@@ -31,7 +31,8 @@ body {
 /***    Landing Page     ***/
 .main-title,
 .main-para {
-    color: #f1f1f1
+    
+    color: #0a0909
 }
 
 .main-title {
@@ -73,6 +74,7 @@ body {
 /***    Login Page     ***/
 h2 {
     font-weight: 300
+    
 }
 
 form {
