@@ -88,11 +88,14 @@ export default function MainHomepage() {
       </div>
       {/* <HeroSection></HeroSection> */}
       <div style={{display: "flex"}}>
-        <div style={{width: "25rem", backgroundColor: "#000000"}}>
-        <form style={{width:'100%'}}>
+        <div style={{width: "25rem", backgroundColor: "#fff"}}>
+        <form style={{width:'100%',backgroundColor:'#42a7c3'}}>
+
                 <p>
                   
-                    <label style={{fontWeight:'bold'}}>Price</label><br></br>
+                    <label style={{fontWeight:'bold',fontSize:'20px'}}>Price</label>
+                    <br></br><br></br>
+                    
                     <div style={{display:"flex"}}>
 
                     <label style={{width:'50%'}}>₹0-₹2000</label>
@@ -118,9 +121,9 @@ export default function MainHomepage() {
                 
                 
             </form>
-            <form style={{width:'100%'}} >
+            <form style={{width:'100%',backgroundColor:'#BDEDFF'}} >
                 <p>
-                    <label ><strong>Star Category</strong></label><br></br>
+                    <label style={{fontWeight:'bold',fontSize:'20px'}} >Star Category</label><br></br><br></br>
                     <div style={{display:"flex"}}>
                       <label style={{width:"50%"}}>5-Star</label>
                       <input type="checkbox"  onChange={(e)=>{setStar(e.target.value)}} required />
@@ -150,9 +153,9 @@ export default function MainHomepage() {
                 
                 
             </form>
-            <form style={{width:'100%'}} >
+            <form style={{width:'100%',backgroundColor:'#BDEDFF'}} >
                 <p>
-                    <label><strong>User Rating</strong></label><br></br>
+                    <label style={{fontWeight:'bold',fontSize:'20px'}}>User Rating</label><br></br><br></br>
 
                     <div style={{display:"flex"}}>
                       <label style={{width:"50%"}}>4.5 & Above</label>
