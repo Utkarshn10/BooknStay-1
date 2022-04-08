@@ -4,7 +4,9 @@ import { useLocation } from "react-router-dom";
 import { getRoom } from "../../../actions/rooms";
 import BookWidget from "../../booking/BookWidget";
 import { displayIcon } from "../../helper/Icons";
+import breakfast from "../icons/breakfast.png"
 import "../../../styles/Room.scss";
+import "../../../styles/Icon.css";
 const Room = (props) => {
   const dispatch = useDispatch();
   const location = useLocation();
@@ -64,14 +66,15 @@ const Room = (props) => {
             <div className="infoIcons">
               <h3>AMENITIES</h3>
               <ul>
-                {room.amenities
+                {/* {room.amenities
                   .filter((item, idx) => idx < show)
                   .map((item) => (
                     <li key={item}>
                       <i className={`${displayIcon(item)} itemIcon`}></i>
                       <p>{item}</p>
                     </li>
-                  ))}
+                  ))} */}
+                  <img src={breakfast} className='icons'></img>
                 <li onClick={handleClick}>
                   <i
                     className={`${
