@@ -2,6 +2,7 @@
   "dependencies": {
     "cookie-parser": "^1.4.6",
     "express": "^4.17.3",
-    "react-google-login": "^5.2.2"
+    "react-google-login": "^5.2.2",
+    "react-places-autocomplete": "^7.3.0"
   }
 }

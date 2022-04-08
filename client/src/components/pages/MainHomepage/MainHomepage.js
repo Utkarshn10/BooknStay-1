@@ -54,8 +54,8 @@ export default function MainHomepage() {
           </header>
       </div>
       {/* <HeroSection></HeroSection> */}
-      <div style={{display:"flex", justifyContent:"space-between"}}>
-        <div style={{width:"25rem", backgroundColor:"red"}}>
+      <div style={{display:"flex"}}>
+        <div style={{width:"25rem", backgroundColor:"#FFFFFF"}}>
 
         </div>
         <div ref={myRef} style={{display:"flex", margin:"20px", flexWrap:"wrap"}}>
