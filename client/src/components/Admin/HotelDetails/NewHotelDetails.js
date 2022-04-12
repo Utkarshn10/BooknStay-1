@@ -1,9 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, {useState, useContext} from "react";
 import axios from "axios";
-import { Context } from "../../../context/Context";
-import { Link } from "react-router-dom";
+import {Context} from "../../../context/Context";
+import {Link} from "react-router-dom";
 import FileBase from "react-file-base64";
 import BackgroundImage from "../../pages/auth/assets/bg.png";
+import "./newHotelDetails.css";
 
 export default function NewHotelDetails() {
   const {user, dispatch} = useContext(Context);
@@ -59,8 +60,6 @@ export default function NewHotelDetails() {
       arr.push("smoking");
     }
 
-
-
     // setAmenties(arr);
     // console.log(arr);
     // console.log(amenties);
@@ -84,11 +83,11 @@ export default function NewHotelDetails() {
         price: price,
         userRating: userRating,
         amenties: arr,
-        photos: array
+        photos: array,
       });
       console.log(res.data);
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
   };
 
@@ -98,7 +97,7 @@ export default function NewHotelDetails() {
 
   return (
     <header style={HeaderStyle}>
-            <div
+      <div
         style={{
           width: "100%",
           height: "4rem",
@@ -128,246 +127,249 @@ export default function NewHotelDetails() {
         </div>
       </div>
 
-
-      <div  style={{display:"flex", justifyContent:"center"}} >
-        <form onSubmit={handleSubmit} style={{ display: "flex", justifyContent: "center", width:"40%" }}>
-          <div style={{marginRight:"30px"}}>
-          <label for=""></label>
-          <br></br>
-          <input
-            type="text"
-            placeholder="Hotelname"
-            onChange={(e) => setHotelName(e.target.value)}
-          />
-          <br></br>
-          <label for=""></label>
-          <br></br>
-          <input
-            type="text"
-            placeholder="HotelDescription"
-            onChange={(e) => setHotelDesc(e.target.value)}
-          />
-          <br></br>
-          <label for=""></label>
-          <br></br>
-          <input
-            type="number"
-            placeholder="HotelRating"
-            onChange={(e) => setHotelrating(e.target.value)}
-          />
-          <br></br>
-          <label for=""></label>
-          <br></br>
-          <input
-            type="text"
-            placeholder="Locality"
-            onChange={(e) => setLocality(e.target.value)}
-          />
-          <br></br>
-          <label for=""></label>
-          <br></br>
-          <input
-            type="text"
-            placeholder="City"
-            onChange={(e) => setCity(e.target.value)}
-          />
-          <br></br>
-          <label for=""></label>
-          <br></br>
-          <input
-            type="text"
-            placeholder="State"
-            onChange={(e) => setState(e.target.value)}
-          />
-          <br></br>
-          <label for=""></label>
-          <br></br>
-          <input
-            type="text"
-            placeholder="Country"
-            onChange={(e) => setCountry(e.target.value)}
-          />
-          <br></br>
-          <label for=""></label>
-          <br></br>
-          <input
-            type="text"
-            placeholder="Checkin"
-            onChange={(e) => setCheckin(e.target.value)}
-          />
-          <br></br>
-          <label for=""></label>
-          <br></br>
-          <input
-            type="text"
-            placeholder="Checkout"
-            onChange={(e) => setCheckout(e.target.value)}
-          />
-          <br></br>
-          <label for=""></label>
-          <br></br>
-          <input
-            style={{ padding: "3px" }}
-            type="number"
-            placeholder="Pincode"
-            onChange={(e) => setPincode(e.target.value)}
-          />
-          <br></br>
-          <label for=""></label>
-          <br></br>
-          <input
-            type="number"
-            placeholder="Price"
-            onChange={(e) => setPrice(e.target.value)}
-          />
-          <br></br>
-          <label for=""></label>
-          <br></br>
-          <input
-            type="number"
-            placeholder="UserRating"
-            onChange={(e) => setUserrating(e.target.value)}
-          />
-          <br></br>
-        </div>
-        <div>
-
-          <h3
-            style={{ color: "black", fontweight: "bolder", fontWeight: "bold" }}
-          >
-            {" "}
-            Other facilities{" "}
-          </h3>
-
-          <br></br>
-
-          <div style={{ display: "flex" }}>
-            <label for="gym" style={{ width: "50%" }}>
+      <div style={{display: "flex", justifyContent: "center"}}>
+        <form onSubmit={handleSubmit} className="form1">
+          <div style={{width: "60%"}}>
+            <label for=""></label>
+            <br></br>
+            <input
+              type="text"
+              placeholder="Hotel Name"
+              onChange={(e) => setHotelName(e.target.value)}
+            />
+            <br></br>
+            <label for=""></label>
+            <br></br>
+            <input
+              type="text"
+              placeholder="Hotel Description"
+              onChange={(e) => setHotelDesc(e.target.value)}
+            />
+            <br></br>
+            <label for=""></label>
+            <br></br>
+            <input
+              type="number"
+              placeholder="Hotel Rating"
+              onChange={(e) => setHotelrating(e.target.value)}
+            />
+            <br></br>
+            <label for=""></label>
+            <br></br>
+            <input
+              type="text"
+              placeholder="Locality"
+              onChange={(e) => setLocality(e.target.value)}
+            />
+            <br></br>
+            <label for=""></label>
+            <br></br>
+            <input
+              type="text"
+              placeholder="City"
+              onChange={(e) => setCity(e.target.value)}
+            />
+            <br></br>
+            <label for=""></label>
+            <br></br>
+            <input
+              type="text"
+              placeholder="State"
+              onChange={(e) => setState(e.target.value)}
+            />
+            <br></br>
+            <label for=""></label>
+            <br></br>
+            <input
+              type="text"
+              placeholder="Country"
+              onChange={(e) => setCountry(e.target.value)}
+            />
+            <br></br>
+            <label for=""></label>
+            <br></br>
+            <input
+              type="text"
+              placeholder="Checkin"
+              onChange={(e) => setCheckin(e.target.value)}
+            />
+            <br></br>
+            <label for=""></label>
+            <br></br>
+            <input
+              type="text"
+              placeholder="Checkout"
+              onChange={(e) => setCheckout(e.target.value)}
+            />
+            <br></br>
+            <label for=""></label>
+            <br></br>
+            <input
+              type="number"
+              placeholder="Pincode"
+              onChange={(e) => setPincode(e.target.value)}
+            />
+            <br></br>
+            <label for=""></label>
+            <br></br>
+            <input
+              type="number"
+              placeholder="Price"
+              onChange={(e) => setPrice(e.target.value)}
+            />
+            <br></br>
+            <label for=""></label>
+            <br></br>
+            <input
+              type="number"
+              placeholder="UserRating"
+              onChange={(e) => setUserrating(e.target.value)}
+            />
+            <br></br>
+          </div>
+          <div style={{marginLeft: "5rem"}}>
+            <h3
+              style={{color: "black", fontweight: "bolder", fontWeight: "bold"}}
+            >
               {" "}
-              Gym
-            </label>
-            <input
-              type="checkbox"
-              onChange={(e) => setGym(e.target.value)}
-            ></input>
+              Other facilities{" "}
+            </h3>
             <br></br>
-          </div>
-
-          <br></br>
-          <div style={{ display: "flex" }}>
-            <label for="spa" style={{ width: "50%" }}>
-              {" "}
-              Spa
-            </label>
-            <input
-              type="checkbox"
-              onChange={(e) => setSpa(e.target.value)}
-            ></input>
+            <div style={{display: "flex"}}>
+              <label for="gym" style={{width: "50%"}}>
+                {" "}
+                Gym
+              </label>
+              <input
+                className="checkbox1"
+                type="checkbox"
+                onChange={(e) => setGym(e.target.value)}
+              ></input>
+              <br></br>
+            </div>
             <br></br>
-          </div>
-
-          <br></br>
-
-          <div style={{ display: "flex" }}>
-            <label for="elevator" style={{ width: "50%" }}>
-              {" "}
-              Elevator
-            </label>
-            <input
-              type="checkbox"
-              onChange={(e) => setElevator(e.target.value)}
-            ></input>
+            <div style={{display: "flex"}}>
+              <label for="spa" style={{width: "50%"}}>
+                {" "}
+                Spa
+              </label>
+              <input
+                className="checkbox1"
+                type="checkbox"
+                onChange={(e) => setSpa(e.target.value)}
+              ></input>
+              <br></br>
+            </div>
             <br></br>
-          </div>
-          <br></br>
-
-          <div style={{ display: "flex" }}>
-            <label for="drycleaning" style={{ width: "50%" }}>
-              {" "}
-              DryCleaning
-            </label>
-            <input
-              type="checkbox"
-              onChange={(e) => setDrycleaning(e.target.value)}
-            ></input>
+            <div style={{display: "flex"}}>
+              <label for="elevator" style={{width: "50%"}}>
+                {" "}
+                Elevator
+              </label>
+              <input
+                className="checkbox1"
+                type="checkbox"
+                onChange={(e) => setElevator(e.target.value)}
+              ></input>
+              <br></br>
+            </div>
             <br></br>
-          </div>
-          <br></br>
-
-          <div style={{ display: "flex" }}>
-            <label for="housekeeping" style={{ width: "50%" }}>
-              Housekeeping
-            </label>
-            <input
-              type="checkbox"
-              onChange={(e) => setHouseKeeping(e.target.value)}
-            ></input>
+            <div style={{display: "flex"}}>
+              <label for="drycleaning" style={{width: "50%"}}>
+                {" "}
+                DryCleaning
+              </label>
+              <input
+                className="checkbox1"
+                type="checkbox"
+                onChange={(e) => setDrycleaning(e.target.value)}
+              ></input>
+              <br></br>
+            </div>
             <br></br>
-          </div>
-          <br></br>
-
-          <div style={{ display: "flex" }}>
-            <label for="parking" style={{ width: "50%" }}>
-              Parking
-            </label>
-            <input
-              type="checkbox"
-              onChange={(e) => setParking(e.target.value)}
-            ></input>
-
+            <div style={{display: "flex"}}>
+              <label for="housekeeping" style={{width: "50%"}}>
+                Housekeeping
+              </label>
+              <input
+                className="checkbox1"
+                type="checkbox"
+                onChange={(e) => setHouseKeeping(e.target.value)}
+              ></input>
+              <br></br>
+            </div>
             <br></br>
-          </div>
-          <br></br>
+            <div style={{display: "flex"}}>
+              <label for="parking" style={{width: "50%"}}>
+                Parking
+              </label>
+              <input
+                className="checkbox1"
+                type="checkbox"
+                onChange={(e) => setParking(e.target.value)}
+              ></input>
 
-          <div style={{ display: "flex" }}>
-            <label for="smoking" style={{ width: "50%" }}>
-              Smoking
-            </label>
-            <input
-              type="checkbox"
-              onChange={(e) => setSmoking(e.target.value)}
-            ></input>
+              <br></br>
+            </div>
             <br></br>
-          </div>
-          <br></br>
-
-          <div style={{ display: "flex" }}>
-            <label style={{ width: "50%" }} for="indoorsports">
-              Indoorsports
-            </label>
-            <input
-              type="checkbox"
-              onChange={(e) => setIndoorSports(e.target.value)}
-            ></input>
+            <div style={{display: "flex"}}>
+              <label for="smoking" style={{width: "50%"}}>
+                Smoking
+              </label>
+              <input
+                className="checkbox1"
+                type="checkbox"
+                onChange={(e) => setSmoking(e.target.value)}
+              ></input>
+              <br></br>
+            </div>
             <br></br>
-          </div>
-
-          <div>
-            <FileBase
-              type="file"
-              multiple={true}
-              onDone={(base64) => {
-                setArray(base64);
+            <div style={{display: "flex"}}>
+              <label style={{width: "50%"}} for="indoorsports">
+                Indoorsports
+              </label>
+              <input
+                className="checkbox1"
+                type="checkbox"
+                onChange={(e) => setIndoorSports(e.target.value)}
+              ></input>
+              <br></br>
+            </div>
+            <div style={{margin: "1rem 0 0 0"}}>
+              <h3
+                style={{
+                  color: "black",
+                  fontweight: "bolder",
+                  fontWeight: "bold",
+                }}
+              >
+                {" "}
+                Upload Images{" "}
+              </h3>
+              <div style={{padding: "1rem "}}>
+                <FileBase
+                  type="file"
+                  multiple={true}
+                  onDone={(base64) => {
+                    setArray(base64);
+                  }}
+                ></FileBase>
+              </div>
+            </div>
+            <br></br>
+            <button
+              type="submit"
+              style={{
+                backgroundColor: "black",
+                color: "white",
+                fontSize: "24px",
+                borderRadius: "5px",
+                padding: "6px",
+                marginTop: "8px",
               }}
-            ></FileBase>
-          </div>
-
-          <br></br>
-          <br></br>
-
-          <button
-            type="submit"
-            style={{
-              backgroundColor: "black",
-              color: "white",
-              fontSize: "20px",
-              borderRadius: "5px",
-              padding: "0 10px",
-              marginTop: "8px",
-            }}
-          >
-            Submit
-          </button>
+            >
+              Submit
+            </button>
           </div>
         </form>
       </div>
@@ -376,8 +378,8 @@ export default function NewHotelDetails() {
 }
 const HeaderStyle = {
   width: "100%",
-  height: "100vh",
-  background: `url(${BackgroundImage})`,
+  height: "100%",
+  // background: `url(${BackgroundImage})`,
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",

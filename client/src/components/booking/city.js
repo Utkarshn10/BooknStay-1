@@ -67,16 +67,20 @@
 
 // export default App;
 
-import React from 'react'
-import './city.css';
+import React from "react";
+import "./city.css";
 
 export const City = () => {
   return (
-    <div >
-      <input style={{border:"1px solid black"}} type="text" className='city' placeholder='   Enter City'/>
-
+    <div>
+      <input
+        style={{padding: "0.5rem", margin: "0"}}
+        type="text"
+        className="city"
+        placeholder=" Enter City"
+      />
     </div>
-  )
-}
+  );
+};
 
 export default City;
