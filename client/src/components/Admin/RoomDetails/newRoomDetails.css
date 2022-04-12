@@ -6,9 +6,11 @@
 .upload{
   margin: "4px 0 0 0";
 }
+
 .checkbox1{
   transform: scale(2);
 }
+
 .col1 {
     float: left;
     width: 50%;

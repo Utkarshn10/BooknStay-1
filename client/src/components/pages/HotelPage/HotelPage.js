@@ -12,6 +12,11 @@ import {
   CarouselItem,
   CarouselIndicators,
 } from 'reactstrap';
+import BackgroundImage from '../auth/assets/homepageImage.jpg'
+
+import basicroom from '../auth/assets/basicroom.jpg'
+import deluxroom from '../auth/assets/delux.jpg'
+import twinroom from '../auth/assets/twinroom.jpg'
 
 const HotelPage = () => {
   const id= window.location.pathname.split("/")
@@ -23,6 +28,7 @@ const HotelPage = () => {
   const [state, setState] = useState()
   const [pincode, setPincode] = useState()
   const [country, setCountry] = useState()
+  const [rating, setRating] = useState(0)
   const [amenties, setAmenties] = useState([])
   const [pics, setPics] = useState([])
 
@@ -46,6 +52,7 @@ const HotelPage = () => {
       setCountry(res.data.address.country)
       setAmenties(res.data.amenties)
       console.log(amenties)
+      setRating(res.data.hotel_rating)
       setPics(res.data.photos)
  
       
@@ -84,39 +91,40 @@ const carouselItemData = pics.map((item) => {
           onExited={() => setAnimating(false)}
           onExiting={() => setAnimating(true)}
       >
-          <img src={item.base64} alt={item.altText} />
+          <img style={{height:"22rem", width:"38rem "}} src={item.base64} alt={item.altText} />
       </CarouselItem>
   );
 });
 
   return (
-    <div className="Home">
+    <div className="Home" style={{background:"#F5F5F5"}}>
     <Navbar></Navbar>
       <header
         className="header-main"
         style={{
-          background: ' no-repeat center/cover url("/img/home/home.jpg")',
+          background: `no-repeat center/cover url(${BackgroundImage})`,
         }}
       >
       </header>
 
       <section className="desc">
         {/* Hotel Name */}
-        <h1 className="alt-font">{hotelDetail.hotel_name}</h1>
+        <h1 style={{fontSize:"5.5rem", textTransform: "uppercase"}} className="alt-font">{hotelDetail.hotel_name}</h1>
 
         {/* Hotel Address */}
-        <p>{`${locality}, ${city}, ${state}, ${country}, ${pincode}`}</p>
+        <p style={{fontSize:"1.4rem", fontWeight:"400"}}>{`${locality}, ${city}, ${state}, ${country}, ${pincode}`}</p>
         
         {/* Hotel Description */}
-        <p>{hotelDetail.hotel_desc}</p>
+        {/* <p style={{marginTop:"3rem"}}>{hotelDetail.hotel_desc}</p> */}
         
         {/* Hotel Rating */}
-        <div style={{margin:"0 auto"}}>
+        <div style={{display:"flex", justifyContent:"center", marginTop:"2rem"}}>
           <ReactStars
               count={5}
-              value={hotelDetail.hotel_rating}
+              value={4}
               size={50}
               edit={false}
+              activeColor="#ffd700"
             />
         </div>
       </section>
@@ -132,34 +140,28 @@ const carouselItemData = pics.map((item) => {
 
       {/* TIMING */}
       <div style={{display:"flex", justifyContent:"center", marginTop:"3rem"}}>
-        <p style={{marginRight:"2rem"}}>Check In Time: {hotelDetail.check_in}</p>
-        <p>Check In Time: {hotelDetail.check_out}</p>
+        <p style={{marginRight:"2rem", fontSize:"1rem", background:"black", padding:"10px", color:"#ffffff"}}>Check In Time: {hotelDetail.check_in}</p>
+        <p style={{fontSize:"1rem", background:"black", padding:"10px", color:"#ffffff"}}>Check Out Time: {hotelDetail.check_out}</p>
       </div>
 
       {/* PHOTO ALBUM */}
-      <section className="desc_main">
-        <article className="descLeft">
-          <div className="bg-light"></div>
-          <h1 className="alt-font">PHUKET IS CALLING</h1>
+      <section style={{display:"flex", justifyContent:"center", backgroundColor:"#ffffff", padding:"2rem"}} className="desc_main">
+        <article className="descLeft" style={{width:"40%"}}>
+          {/* <div className="bg-light"></div> */}
+          <h1 className="alt-font" style={{fontWeight:"bold", fontSize:"1.5rem"}}>ABOUT US</h1>
           <p>
-            Welcome back to our Oceanside Resort, in the heart of Phuket's
-            bustling, breathtaking city. Nestled between the dramatic peaks of
-            Table Mountain and the roaring Atlantic Ocean, you’ll spend warm
-            leisurely <day>                       </day>s by glistening pools or basked in relaxation at our
-            spa, and balmy evenings sampling local flavours at our exquisite
-            restaurants, Nobu, Vista Bar & Lounge and Isola. Let us show you
-            another side to Phuket. Here&Now.
+            {hotelDetail.hotel_desc}
           </p>
-          <h2>RESORT OPEN</h2>
-          <Link to="/rooms">
+          {/* <Link to="/rooms">
             <button className="btn contrast">Discover More</button>
-          </Link>
+          </Link> */}
         </article>
-        <div className="descRight">
+        <div className="descRight" style={{width:"60%"}}>
         <div style={{
-            display: 'block', width: 320, margin: 2 ,padding: 30
+            // margin: 2 ,padding: 30
         }}>
             <Carousel previous={previousButton} next={nextButton}
+              interval={2000}
                 activeIndex={activeIndex}>
                 <CarouselIndicators items={pics}
                     activeIndex={activeIndex}
@@ -177,76 +179,10 @@ const carouselItemData = pics.map((item) => {
         </div>
       </section>
 
-      {/* <section>
-        {pics.map((pic)=>(
-          <div style={{height:"20rem", width:"40rem"}}>
-            <img src={pic.base64}></img>
-          </div>
+      <Link to="/rooms" style={{display:"flex", justifyContent:"center", marginTop:"3rem"}}>
+                <button style={{backgroundColor:"#000000", color:"white"}}  className="btn contrast">Book Now!</button>
+      </Link>
 
-        ))}
-      </section> */}
-
-      <section className="spotlight">
-        <h1 className="alt-font">ROOMS AVAILABLE</h1>
-        <div className="card-row">
-          <div className="card">
-            <div>
-              <img src="/img/home/home_food.jpg" alt="home_food" />
-            </div>
-            <article>
-              <h2 className="alt-font">Basic Room</h2>
-              <p>
-              A room with the facility of single bed/Double Bed. It is meant for single occupancy. It has an attached bathroom, a small dressing table, a small bedside table, and a small writing table. Sometimes it has a single chair too.
-              </p>
-              <p>Number of Beds: 1</p>
-              <p>Maximum People Allowed: 2</p>
-              <p>Price: 3000</p>
-              <Link to="/dining">
-                <button className="btn contrast">Discover More</button>
-              </Link>
-            </article>
-          </div>
-          <div className="card">
-            <div>
-              <img src="/img/home/home_room.jpg" alt="home_room" />
-            </div>
-            <article>
-              <h2 className="alt-font">Deluxe Room</h2>
-              <p>
-              available in Single Deluxe and Double Deluxe variants. Deluxe room is well furnished. Some amenities are attached bathroom, a dressing table, a bedside table, a small writing table, a TV, and a small fridge. The floor is covered with carpet and most suitable for small families.
-              </p>
-              <p>Number of Beds: 1</p>
-              <p>Maximum People Allowed: 4</p>
-              <p>Price: 5000</p>
-              <Link to="/rooms">
-                <button className="btn contrast">Discover More</button>
-              </Link>
-            </article>
-          </div>
-          <div className="card">
-            <div>
-              <img src="/img/home/home_tour.jpg" alt="home_food" />
-            </div>
-            <article>
-              <h2 className="alt-font">Twin Room</h2>
-              <p>
-              This room provides two single beds with separate headboards. It is meant for two independent people. It also has a single bedside table shared between the two beds. It also has a single bedside table shared between the two beds.
-              </p>
-              <p>Number of Beds: 1</p>
-              <p>Maximum People Allowed: 4</p>
-              <p>Price: 5000</p>
-              <Link to="/tours">
-                <button className="btn contrast">Discover More</button>
-              </Link>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      {/* ROOMS */}
-      {/* <section>
-        <RoomCard></RoomCard>
-      </section> */}
     </div>
   );
 };

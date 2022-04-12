@@ -23,22 +23,18 @@ const Rooms = () => {
       >
         <div className="header-content">
           <h2 className="alt-font">Rooms</h2>
-          <p>
-            Our generous guest rooms at Suay Resort boast breathtaking views and
-            exclusive amenities
-          </p>
         </div>
 
-        <BookWidget />
+        {/* <BookWidget /> */}
       </header>
 
       <section className="desc">
         <h1 className="alt-font">Be Captivated</h1>
-        <p>
+        {/* <p>
           Choose between spectacular balcony views of The Villa or our resort’s
           private Beach Resort and Oceanside View, from the largest hotel rooms
           in Phuket.
-        </p>
+        </p> */}
       </section>
 
       <section className="flex-row-lg">

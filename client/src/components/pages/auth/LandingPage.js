@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom'
 
 import "../../../../src/App.css"
 
-import BackgroundImage from './assets/bg.png'
+import BackgroundImage from './assets/lp.jpg'
 
 export default function LandingPage() {
     return (
-        <header style={ HeaderStyle }>
-            <h1 className="main-title text-center">login / register page</h1>
-            <p className="main-para text-center">join us now and don't waste time</p>
+        <header style={ HeaderStyle}>
+            <h1 style={{fontSize:'80px', fontweight:'bolder', color:'white'}} className="main-title text-center" >BooknStay</h1>
+            <p style={{fontSize:'25px', color:'white', padding:'0px'}} className=" text-center">A Heaven Like Experience</p>
             <div className="buttons text-center">
                 <Link to="/Customer">
-                    <button className="primary-button">Customer</button>
+                    <button className="primary-button" >Customer</button>
                 </Link>
                 <Link to="/Admin">
                     <button className="primary-button" id="reg_btn"><span>Admin </span></button>
@@ -23,8 +23,8 @@ export default function LandingPage() {
 }
 
 const HeaderStyle = {
-    width: "100%",
-    height: "100vh",
+    width: "1518px",
+    height: "800px",
     background: `url(${BackgroundImage})`,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",

@@ -1,13 +1,15 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import {Card, ListGroup, ListGroupItem} from "react-bootstrap";
 import Rating from "../../Rating";
 import ReactStars from "react-rating-stars-component";
 import {Link} from "react-router-dom";
-import { useEffect } from "react/cjs/react.production.min";
 
 export default function HotelCard(props) {
-  
+  useEffect(() => {
+    console.log(props.photos);
+  }, []);
+
   return (
     <div style={{margin: "1.5rem"}}>
       {/* <Rating/> */}
@@ -15,7 +17,8 @@ export default function HotelCard(props) {
       <Card style={{width: "20rem", padding: "0.5rem"}}>
         <Card.Img
           variant="top"
-          // src= {`$(props.photos).get(0)`} 
+          src={props.photos[0].base64}
+          style={{width: "100%", height: "40vh"}}
         />
 
         <Card.Body style={{padding: "0.5rem", margin: "0 auto"}}>

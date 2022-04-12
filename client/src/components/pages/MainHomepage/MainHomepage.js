@@ -3,7 +3,7 @@ import React, {useContext, useEffect, useState, useRef} from "react";
 import {Context} from "../../../context/Context";
 import axios from "axios";
 import BookWidget from "../../booking/BookWidget";
-import BackgroundImage from "../../pages/auth/assets/homepageImage.jpg";
+import BackgroundImage from "../../pages/auth/assets/pknb.jpg";
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
 
@@ -13,8 +13,6 @@ export default function MainHomepage() {
   const [Price, setPrice] = useState(false);
   const [Star, setStar] = useState(false);
   const [UserRating, setUserrating] = useState(false);
-
-
 
   useEffect(() => {
     var fetchHotels = async () => {
@@ -50,9 +48,16 @@ export default function MainHomepage() {
             paddingTop: "1rem",
           }}
         >
-          <h4 style={{color: "white"}}>Welcome to BooknStay</h4>
+          <h4 style={{color: "white", fontSize: "25px"}}>
+            Welcome to BooknStay!
+          </h4>
           <button
             style={{
+              backgroundColor: "grey",
+              borderRadius: "5px",
+              fontSize: "20px",
+              padding: "0 10px",
+              marginTop: "0px",
               color: "white",
               display: "flex",
               justifyContent: "flex-end",
@@ -73,10 +78,12 @@ export default function MainHomepage() {
                 style={{
                   color: "white",
                   fontSize: "30px",
-                  backgroundColor: "green",
+                  backgroundColor: "black",
                   borderRadius: "5px",
                   padding: "0 10px",
                   marginTop: "10px",
+                  size: "50px",
+                  fontSize: "20px",
                 }}
                 onClick={executeScroll}
               >
@@ -88,96 +95,167 @@ export default function MainHomepage() {
       </div>
       {/* <HeroSection></HeroSection> */}
       <div style={{display: "flex"}}>
-        <div style={{width: "25rem", backgroundColor: "red"}}>
-        <form style={{width:'100%'}}>
-                <p>
-                  
-                    <label style={{fontWeight:'bold'}}>Price</label><br></br>
-                    <div style={{display:"flex"}}>
+        <div style={{width: "20rem", backgroundColor: "#fff", padding: "10px"}}>
+          <form style={{width: "100%", marginTop: " -10px"}}>
+            <p>
+              <label style={{fontWeight: "bold", fontSize: "20px"}}>
+                Price
+              </label>
+              <br></br>
+              <br></br>
 
-                    <label style={{width:"50%"}}>  ₹0-₹2000</label>
-                    <input type="checkbox"  onChange={(e)=>{setPrice(e.target.value)}} required />
-                    </div>
-                </p><br></br>
-                
-                <p>
-                    <div style={{display:"flex"}}>
-                    
-                    <label style={{width:"50%"}}>₹2000-₹4000</label>
-                    <input type="checkbox"  onChange={(e)=>{setPrice(e.target.value)}} required />
-                    </div>
-                    
-                </p><br></br>
-                <p>
-                    <div style={{display:"flex"}}>
-                    
-                    <label style={{width:"50%"}}>₹4000-₹8000</label>
-                    <input type="checkbox"  onChange={(e)=>{setPrice(e.target.value)}} required />
-                    </div>
-                </p><br></br>
-                
-                
-            </form>
-            <form style={{width:'100%'}} >
-                <p>
-                    <label ><strong>Star Category</strong></label><br></br>
-                    <div style={{display:"flex"}}>
-                      <label style={{width:"50%"}}>5-Star</label>
-                      <input type="checkbox"  onChange={(e)=>{setStar(e.target.value)}} required />
-                    </div>
+              <div style={{display: "flex"}}>
+                <label style={{width: "70%", fontWeight: "bolder"}}>
+                  ₹0-₹2000
+                </label>
+                <input
+                  type="checkbox"
+                  onChange={(e) => {
+                    setPrice(e.target.value);
+                  }}
+                  required
+                />
+              </div>
+            </p>
+            <br></br>
 
-                </p>
-                
-                <br></br>
-                <p>
-                    
-                    <div style={{display:"flex"}}>
-                      <label style={{width:"50%"}}>5-Star</label>
-                      <input type="checkbox"  onChange={(e)=>{setStar(e.target.value)}} required />
-                    </div>
-                </p>
-                
-                <br></br>
-                <p>
-                    
-                    <div style={{display:"flex"}}>
-                      <label style={{width:"50%"}}>5-Star</label>
-                      <input type="checkbox"  onChange={(e)=>{setStar(e.target.value)}} required />
-                    </div>
-                </p>
-                
-                <br></br>
-                
-                
-            </form>
-            <form style={{width:'100%'}} >
-                <p>
-                    <label><strong>User Rating</strong></label><br></br>
+            <p>
+              <div style={{display: "flex"}}>
+                <label style={{width: "70%", fontWeight: "bolder"}}>
+                  ₹2000-₹4000
+                </label>
+                <input
+                  type="checkbox"
+                  onChange={(e) => {
+                    setPrice(e.target.value);
+                  }}
+                  required
+                />
+              </div>
+            </p>
+            <br></br>
+            <p>
+              <div style={{display: "flex"}}>
+                <label style={{width: "70%", fontWeight: "bolder"}}>
+                  ₹4000-₹8000
+                </label>
+                <input
+                  type="checkbox"
+                  onChange={(e) => {
+                    setPrice(e.target.value);
+                  }}
+                  required
+                />
+              </div>
+            </p>
+            <br></br>
 
-                    <div style={{display:"flex"}}>
-                      <label style={{width:"50%"}}>4.5 & Above</label>
-                      <input type="checkbox"  onChange={(e)=>{setUserrating(e.target.value)}} required />
-                    </div>
+            <p>
+              <label style={{fontWeight: "bold", fontSize: "20px"}}>
+                Star Category
+              </label>
+              <br></br>
+              <br></br>
+              <div style={{display: "flex"}}>
+                <label style={{width: "50%", fontWeight: "bolder"}}>
+                  5-Star
+                </label>
+                <input
+                  type="checkbox"
+                  onChange={(e) => {
+                    setStar(e.target.value);
+                  }}
+                  required
+                />
+              </div>
+            </p>
 
-                </p>
-                
-                <br></br>
-                <p>
-                    <div style={{display:'flex'}}>
-                    <label style={{width:'50%'}}>4 & Above</label>
-                    <input type="checkbox"  onChange={(e)=>{setUserrating(e.target.value)}} required />
-                    </div>
-                </p><br></br>
-                <p>
-                    <div style={{display:'flex'}}>  
-                    <label style={{width:'50%'}}>3 & Above</label>
-                    <input type="checkbox"  onChange={(e)=>{setUserrating(e.target.value)}} required />
-                    </div>
-                </p>
-                
-                
-            </form>
-                
+            <br></br>
+            <p>
+              <div style={{display: "flex"}}>
+                <label style={{width: "50%", fontWeight: "bolder"}}>
+                  4-Star
+                </label>
+                <input
+                  type="checkbox"
+                  onChange={(e) => {
+                    setStar(e.target.value);
+                  }}
+                  required
+                />
+              </div>
+            </p>
+
+            <br></br>
+            <p>
+              <div style={{display: "flex"}}>
+                <label style={{width: "50%", fontWeight: "bolder"}}>
+                  3-Star
+                </label>
+                <input
+                  type="checkbox"
+                  onChange={(e) => {
+                    setStar(e.target.value);
+                  }}
+                  required
+                />
+              </div>
+            </p>
+
+            <br></br>
+
+            <p>
+              <label style={{fontWeight: "bold", fontSize: "20px"}}>
+                User Rating
+              </label>
+              <br></br>
+              <br></br>
+
+              <div style={{display: "flex"}}>
+                <label style={{width: "50%", fontWeight: "bolder"}}>
+                  4.5 & Above
+                </label>
+                <input
+                  type="checkbox"
+                  onChange={(e) => {
+                    setUserrating(e.target.value);
+                  }}
+                  required
+                />
+              </div>
+            </p>
+
+            <br></br>
+            <p>
+              <div style={{display: "flex"}}>
+                <label style={{width: "50%", fontWeight: "bolder"}}>
+                  4 & Above
+                </label>
+                <input
+                  type="checkbox"
+                  onChange={(e) => {
+                    setUserrating(e.target.value);
+                  }}
+                  required
+                />
+              </div>
+            </p>
+            <br></br>
+            <p>
+              <div style={{display: "flex"}}>
+                <label style={{width: "50%", fontWeight: "bolder"}}>
+                  3 & Above
+                </label>
+                <input
+                  type="checkbox"
+                  onChange={(e) => {
+                    setUserrating(e.target.value);
+                  }}
+                  required
+                />
+              </div>
+            </p>
+          </form>
         </div>
         <div
           ref={myRef}
@@ -191,6 +269,7 @@ export default function MainHomepage() {
               hotel_rating={hotel.hotel_rating}
               price={hotel.price}
               user_rating={hotel.userRating}
+              photos={hotel.photos}
             ></HotelCard>
           ))}
         </div>
@@ -200,8 +279,8 @@ export default function MainHomepage() {
 }
 
 const HeaderStyle = {
-  width: "100%",
-  height: "100vh",
+  width: "1600px",
+  height: "700px",
   background: `url(${BackgroundImage})`,
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
