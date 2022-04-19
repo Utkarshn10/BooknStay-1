@@ -37,24 +37,18 @@ export const updateHotel = async (req, res) =>{
 
 //DELETE HOTEL DETAILS BY ID
 export const deleteHotel = async (req,res) =>{
-    const hotel = await hotelDetailsModel.findById(req.params.hotelId)
-    if(req.body.hotel_id === req.params.hotelId){
         try{
-            await hotelDetailsModel.findByIdAndDelete(req.params.hotelId)
+            await hotelDetailsModel.findOneAndDelete({"admin_id":req.params.adminid})
             res.status(200).json("Hotel Deleted Successfully")
         }
         catch(err){
             res.status(400).json(err)
         }
-    }
-    else{
-        res.status(400).json("You can only delete your Hotel")
-    }
 }
 
 //GET HOTEL BY ID
 export const getHotel = async (req,res) =>{
-    const hotel = await hotelDetailsModel.findById(req.params.hotelid)
+    const hotel = await hotelDetailsModel.find({"admin_id":req.params.adminid})
     res.status(200).json(hotel)
 }
 

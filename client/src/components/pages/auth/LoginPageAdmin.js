@@ -22,7 +22,7 @@ export default function LoginPageAdmin() {
         password: password,
       });
       dispatch({type: "LOGIN_SUCCESS", payload: res.data});
-      history.push("/");
+      history.push("/adminhome");
     } catch (err) {
       dispatch({type: "LOGIN_FAILURE"});
     }

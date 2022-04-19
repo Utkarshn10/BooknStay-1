@@ -33,6 +33,8 @@ import HotelPage from "./components/pages/HotelPage/HotelPage";
 import Home from "./components/pages/Home";
 import NewRoomDetails from "./components/Admin/RoomDetails/NewRoomDetails";
 import City from "../src/components/booking/city";
+import { AdminHomepage } from "./components/Admin/AdminHomepage/AdminHomepage";
+import UpdateHotel from "./components/Admin/AdminHomepage/UpdateHotel";
 const App = () => {
   const {user} = useContext(Context);
   const location = useLocation();
@@ -76,7 +78,7 @@ const App = () => {
         {user ? (
           <Route exact path="/">
             {user.result.isAdmin == true ? (
-              <NewHotelDetails />
+              <AdminHomepage />
             ) : (
               <MainHomepage />
             )}
@@ -127,12 +129,15 @@ const App = () => {
         <Route path="/addRoom" component={NewRoomDetails}></Route>
         <Route path="/hotel/:id" component={HotelPage} />
         <Route path="/hotelpage" component={Home}></Route>
+        <Route path="/updateHotel" component={UpdateHotel}></Route>
         {/* <Route path="/checkout" component={checkout}></Route> */}
 
         <Route path="/home">
           <MainHomepage></MainHomepage>
         </Route>
-        <Route path="/addHotel" component={NewHotelDetails} />
+
+        <Route path="/adminhome" component={AdminHomepage} />
+
       </Switch>
       <Footer />
     </>
