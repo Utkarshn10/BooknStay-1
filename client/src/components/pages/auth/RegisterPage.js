@@ -75,7 +75,7 @@ export default function SignUpPage() {
                 </p>
             </form> 
             <footer style={{color:'white', padding: '20px' , fontWeight:'bolder'}}>
-                <p><Link to="/">Back to Homepage</Link>.</p>
+                <p><Link style={{color:"white"}} to="/">Back to Homepage</Link>.</p>
             </footer>
         </div>
         </header>

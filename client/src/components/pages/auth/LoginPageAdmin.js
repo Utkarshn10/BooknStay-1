@@ -53,8 +53,8 @@ export default function LoginPageAdmin() {
                 </p>
             </form>
             <footer style={{color:'white',  padding: '20px' , fontWeight:'bolder', fontSize:'35px'}}>
-                <p>First time? <Link to="/AdminRegister">Create an account</Link>.</p>
-                <p><Link to="/">Back to Homepage</Link>.</p>
+                <p>First time? <Link to="/AdminRegister" style={{color:"white"}}>Create an account</Link>.</p>
+                <p><Link style={{color:"white"}} to="/">Back to Homepage</Link>.</p>
             </footer>
         </div>
         </header>

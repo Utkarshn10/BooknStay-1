@@ -23,8 +23,8 @@ export default function LandingPage() {
 }
 
 const HeaderStyle = {
-    width: "1518px",
     height: "800px",
+    marginBottom:"-35px",
     background: `url(${BackgroundImage})`,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",

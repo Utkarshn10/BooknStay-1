@@ -96,7 +96,7 @@ export default function MainHomepage() {
       </div>
       {/* <HeroSection></HeroSection> */}
       <div style={{display: "flex"}}>
-        <div style={{width: "20rem", backgroundColor: "#fff", padding:'10px'}}>
+        <div style={{width: "20rem", backgroundColor: "#fff", paddingTop:'10px'}}>
         <form style={{width:'100%', marginTop:' -10px'}}>
 
                 <p>
@@ -127,7 +127,7 @@ export default function MainHomepage() {
                     </div>
                 </p><br></br>
                 
-                
+                <div style={{height:"1px", backgroundColor:"gray"}}></div>
             
                 <p>
                     <label style={{fontWeight:'bold',fontSize:'20px',}} >Star Category</label><br></br><br></br>
@@ -158,7 +158,7 @@ export default function MainHomepage() {
                 
                 <br></br>
                 
-                
+                <div style={{height:"1px", backgroundColor:"gray"}}></div>
             
                 <p>
                     <label style={{fontWeight:'bold',fontSize:'20px'}}>User Rating</label><br></br><br></br>
@@ -210,7 +210,6 @@ export default function MainHomepage() {
 }
 
 const HeaderStyle = {
-  width: "1600px",
   height: "700px",
   background:`url(${BackgroundImage})`,
   backgroundPosition: "center",

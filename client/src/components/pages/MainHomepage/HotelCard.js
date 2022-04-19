@@ -17,6 +17,7 @@ export default function HotelCard(props) {
 
       <Card style={{width: "20rem", padding: "0.5rem"}}>
         <Card.Img
+        style={{height:"230px"}}
           variant="top"
           src= {props.photos[0].base64} 
         />
@@ -50,7 +51,7 @@ export default function HotelCard(props) {
           <p>Rs. {props.price} - Free Cancellation</p>
         </div>
         <Card.Body>
-          <Link to={`/hotel/${props.id}`}>Read More</Link>
+          <Link style={{backgroundColor:"black", padding:"5px", color:"white", borderRadius:"3px"}} to={`/hotel/${props.id}`}>Read More</Link>
         </Card.Body>
       </Card>
     </div>

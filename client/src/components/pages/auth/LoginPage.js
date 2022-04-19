@@ -39,7 +39,7 @@ export default function SignInPage() {
             <h2 style={{color:'white' , padding: '20px' , fontWeight:'bolder', fontSize:'35px'}}> Sign in to us</h2>
             <form action="/home" onSubmit={handleLogin}>
                 <p>
-                    <label>Username or email address</label><br></br>
+                    <label>Email Address</label><br></br>
                     <input type="text" name="first_name" onChange={(e)=>{setEmail(e.target.value)}} required />
                 </p><br></br>
                 <p>
@@ -54,8 +54,8 @@ export default function SignInPage() {
                 </p>
             </form><br></br>
             <footer style={{color:'white',fontWeight:'bolder', fontSize:'24px'}}>
-                <p>First time? <Link to="/register">Create an account</Link>.</p>
-                <p><Link to="/">Back to Homepage</Link>.</p>
+                <p>First time? <Link style={{color:"white"}} to="/register">Create an account</Link>.</p>
+                <p><Link style={{color:"white"}}  to="/">Back to Homepage</Link>.</p>
             </footer>
         </div>
         </header>

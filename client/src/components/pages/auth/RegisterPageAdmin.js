@@ -45,16 +45,16 @@ export default function RegisterPageAdmin() {
     return (
         <header style={ HeaderStyle}>
 
-        <div className="text-center" >
+        <div className="text-center">
             <h2 style={{color:'white',  padding: '20px' , fontWeight:'bolder', fontSize:'35px'}}>Join us</h2>
-            <h5 style={{color:'white',  padding: '08px' , fontWeight:'bolder', fontSize:'20px'}}>Create your personal admin account</h5>
+            <h5 style={{color:'white',  padding: '08px' , fontWeight:'bolder', fontSize:'20px'}}>Create your personal Admin account</h5>
             <form action="/home" onSubmit={handleRegister}>
                 <p>
-                    <label>firstname</label><br/>
+                    <label>First name</label><br/>
                     <input type="text" name="first_name" onChange={(e)=>{setFirstname(e.target.value)}} required />
                 </p><br></br>
                 <p>
-                    <label>Lastname</label><br/>
+                    <label>Last name</label><br/>
                     <input type="text" name="first_name" onChange={(e)=>{setLastname(e.target.value)}} required />
                 </p><br></br>
                 <p>
@@ -66,7 +66,7 @@ export default function RegisterPageAdmin() {
                     <input type="password" name="password" onChange={(e)=>{setPassword(e.target.value)}} requiredc />
                 </p><br></br>
                 <p>
-                    <label>phone</label><br/>
+                    <label>Phone</label><br/>
                     <input type="phone" name="phone" onChange={(e)=>{setPhone(e.target.value)}} requiredc />
                 </p><br></br>
                 <p>
@@ -78,7 +78,7 @@ export default function RegisterPageAdmin() {
                 </p>
             </form> 
             <footer style={{color:'white',  padding: '20px' , fontWeight:'bolder', fontSize:'35px'}}>
-                <p><Link to="/">Back to Homepage</Link>.</p>
+                <p><Link style={{color:"white"}} to="/">Back to Homepage</Link>.</p>
             </footer>
         </div>
         </header>
