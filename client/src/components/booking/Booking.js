@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { getSingleBooking } from "../../actions/booking";
+import React, {useState} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {useHistory} from "react-router-dom";
+import {getSingleBooking} from "../../actions/booking";
 import BookingWidget from "./BookWidget";
 import Available from "./Available";
 import "../../styles/Booking.scss";
@@ -17,7 +17,7 @@ const Booking = (props) => {
   });
   const [error, setError] = useState("");
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({...formData, [e.target.name]: e.target.value});
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,6 +37,7 @@ const Booking = (props) => {
       <header
         className="header-main"
         style={{
+          width: "200%",
           background:
             ' no-repeat center/cover url("/img/booking/booking_header.jpg")',
         }}
@@ -70,7 +71,7 @@ const Booking = (props) => {
         <span className="disclaimer">
           * expired bookings will automatically be deleted
         </span>
-        {error.length > 0 && <span style={{ color: "red" }}>{error}</span>}
+        {error.length > 0 && <span style={{color: "red"}}>{error}</span>}
       </section>
       <section className="desc">
         <h1 className="alt-font">BOOK A ROOM</h1>

@@ -17,7 +17,8 @@
     "@material-ui/pickers": "^3.3.10",
     "@material-ui/styles": "^4.11.4",
     "@mui/icons-material": "^5.5.1",
-    "@mui/material": "^5.5.1",
+    "@mui/material": "^5.6.0",
+    "@mui/styled-engine-sc": "^5.5.2",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -54,7 +55,7 @@
     "redux": "^4.1.0",
     "redux-thunk": "^2.3.0",
     "search-params": "^3.0.0",
-    "styled-components": "^5.3.3",
+    "styled-components": "^5.3.5",
     "uuid": "^8.1.0",
     "web-vitals": "^1.1.2"
   },
