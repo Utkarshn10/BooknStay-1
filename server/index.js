@@ -2,14 +2,14 @@ import express from "express";
 import mongoose from "mongoose"; // Data Base
 import cors from "cors"; // for Cross-Origin
 import dotenv from "dotenv";
-import bookingRoutes from "./routes/bookings.js";
+// import bookingRoutes from "./routes/bookings.js";
 import roomRoutes from "./routes/rooms.js";
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/user.js";
 import adminRoutes from "./routes/admin.js";
 import hotelDetailsRouter from "./routes/hotelDetailsRouter.js";
 import roomDetailsRouter from "./routes/roomDetailsRouter.js";
-
+import bookingRoutes from "./routes/hotelBookingsRouter.js";
 
 const app = express();
 dotenv.config();

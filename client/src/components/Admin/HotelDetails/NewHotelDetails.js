@@ -6,6 +6,8 @@ import FileBase from "react-file-base64";
 import BackgroundImage from "../../pages/auth/assets/bg.png";
 import "./newHotelDetails.css";
 
+import { useHistory } from "react-router-dom";
+
 export default function NewHotelDetails() {
   const {user, dispatch} = useContext(Context);
   const [hotelName, setHotelName] = useState("");
@@ -31,6 +33,10 @@ export default function NewHotelDetails() {
   const [smoking, setSmoking] = useState(false);
   const [indoorsports, setIndoorSports] = useState(false);
   const [array, setArray] = useState([]);
+
+  let history = useHistory()
+
+
 
   const handleSubmit = async (e) => {
     console.log("called");
@@ -93,6 +99,8 @@ export default function NewHotelDetails() {
 
   const handleLogout = () => {
     dispatch({type: "LOGOUT"});
+    history.push('/')
+    
   };
 
   return (

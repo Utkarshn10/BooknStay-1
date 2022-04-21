@@ -120,24 +120,12 @@ export const AdminHomepage = (props) => {
       </div>
       
         <div style={{display:"flex", justifyContent:"space-evenly"}}>
-
             <Link to="/updateHotel">Update</Link>
+            <a onClick={handleDelete}>Delete</a>
 
-            <a onClick={handleDelete}>
-                Delete
-            </a>
-
+          </div>
         </div>
-
-        </div>
-
-
     }
-
-
-
-
-
 
     </header>
 
